@@ -40,4 +40,5 @@ tests.each do |test|
 end
 
 users.each do |user|
+  2.times { TestCompletions.create!(user_id: user.id, test_id: tests.sample.id) }
 end
