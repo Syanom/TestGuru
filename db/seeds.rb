@@ -16,7 +16,7 @@ end
 def create_questions(test)
   3.times do |i|
     question = Question.create!(body: "Question #{i + 1} for #{test.title} test", test_id: test.id)
-    create_answers(question, answers)
+    create_answers(question)
   end
 end
 
@@ -33,12 +33,10 @@ tests = Test.create!([
                        { title: 'Introduction in Alien programming languages', level: 3,
                          category_id: Category.find_by(name: 'Fullstack').id, author_id: User.find_by(name: 'Yan Dupliy').id }
                      ])
-questions = []
-answers = []
 tests.each do |test|
-  create_questions(test, questions, answers)
+  create_questions(test)
 end
 
 users.each do |user|
-  2.times { TestCompletions.create!(user_id: user.id, test_id: tests.sample.id) }
+  2.times { TestCompletion.create!(user_id: user.id, test_id: tests.sample.id) }
 end
