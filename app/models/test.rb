@@ -7,6 +7,10 @@ class Test < ApplicationRecord
   has_many :users, through: :test_completions
 
   validates :title, presence: true
+  validates :level, numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 0
+  }
 
   scope :tests_by_category, lambda { |name|
                               joins(:category)
