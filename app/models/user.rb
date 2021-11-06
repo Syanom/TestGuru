@@ -4,6 +4,6 @@ class User < ApplicationRecord
   has_many :completed_tests, class_name: 'Test', through: :test_completions, source: :test
 
   def tests_by_level(level)
-    completed_tests.where(level: level)
+    completed_tests.level(level)
   end
 end
