@@ -1,7 +1,8 @@
 class Test < ApplicationRecord
-  has_many :questions
-  has_many :test_completions
+  has_many :questions, dependent: :destroy
+  has_many :test_completions, dependent: :destroy
   has_many :users, through: :test_completions
+
   belongs_to :category
   belongs_to :author, class_name: 'User'
 
