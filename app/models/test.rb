@@ -11,6 +11,7 @@ class Test < ApplicationRecord
     only_integer: true,
     greater_than_or_equal_to: 0
   }
+  validates_uniqueness_of :title, scope: :level
 
   scope :tests_by_category, lambda { |name|
                               joins(:category)
