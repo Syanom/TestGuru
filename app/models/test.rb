@@ -6,6 +6,8 @@ class Test < ApplicationRecord
   has_many :test_completions, dependent: :destroy
   has_many :users, through: :test_completions
 
+  validates :title, presence: true
+
   scope :tests_by_category, lambda { |name|
                               joins(:category)
                                 .where(categories: { name: name })
