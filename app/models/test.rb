@@ -6,12 +6,12 @@ class Test < ApplicationRecord
   has_many :test_completions, dependent: :destroy
   has_many :users, through: :test_completions
 
-  def self.tests_by_category(category_name)
-    joins(:category)
-      .where(categories: { name: category_name })
-      .order(title: :DESC)
-      .pluck(:title)
-  end
+  scope :tests_by_category, lambda { |name|
+                              joins(:category)
+                                .where(categories: { name: name })
+                                .order(title: :DESC)
+                                .pluck(:title)
+                            }
 
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
