@@ -17,11 +17,14 @@ class Test < ApplicationRecord
                               joins(:category)
                                 .where(categories: { name: name })
                                 .order(title: :DESC)
-                                .pluck(:title)
                             }
 
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :level, ->(level) { where(level: level) }
+
+  def tests_by_category_titles
+    tests_by_category.pluck(:title)
+  end
 end
