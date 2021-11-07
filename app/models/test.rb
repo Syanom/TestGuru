@@ -24,7 +24,7 @@ class Test < ApplicationRecord
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :level, ->(level) { where(level: level) }
 
-  def tests_by_category_titles
-    tests_by_category.pluck(:title)
+  def test_titles_by_category(name)
+    tests_by_category(name).pluck(:title)
   end
 end
