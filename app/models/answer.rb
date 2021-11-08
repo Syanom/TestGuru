@@ -6,12 +6,6 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true) }
 
-  def destroy
-    raise "You can't delete the only answer of the question" unless question.answers.count > 1
-
-    super
-  end
-
   private
 
   def answers_amount
