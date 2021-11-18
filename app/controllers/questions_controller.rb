@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
   def new; end
 
   def create
-    @question = Question.new(body: params[:question_body], test_id: @test.id)
+    @question = @test.questions.new(question_params)
     if @question.save
       redirect_to @question
     else
@@ -40,5 +40,9 @@ class QuestionsController < ApplicationController
 
   def question_not_found
     render plain: 'The question is not found'
+  end
+
+  def question_params
+    params.require(:question).permit(:body)
   end
 end
