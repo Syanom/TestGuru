@@ -1,5 +1,5 @@
 module QuestionsHelper
-  def form_header
+  def question_header
     if @question.new_record?
       "Create New #{@question.test.title} Question"
     else
