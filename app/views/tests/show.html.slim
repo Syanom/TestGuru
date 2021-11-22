@@ -1,6 +1,5 @@
 h1
-  = @test.title
-  |  test
+  table = render @test
 
 p = link_to 'New question', "#{@test.id}/questions/new"
 
