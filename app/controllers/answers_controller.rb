@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to @answer, notice: 'Answer succesfully created'
     else
-      redirect_to :new
+      render :new
     end
   end
 
