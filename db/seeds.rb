@@ -22,17 +22,6 @@ tests = Test.create!([
                          category_id: categories[2].id, author_id: users[1].id }
                      ])
 
-TestCompletion.create!([
-                         { user_id: users[0].id, test_id: tests[3].id },
-                         { user_id: users[1].id, test_id: tests[0].id },
-                         { user_id: users[1].id, test_id: tests[1].id },
-                         { user_id: users[1].id, test_id: tests[2].id },
-                         { user_id: users[2].id, test_id: tests[1].id },
-                         { user_id: users[2].id, test_id: tests[2].id },
-                         { user_id: users[3].id, test_id: tests[1].id },
-                         { user_id: users[3].id, test_id: tests[3].id }
-                       ])
-
 questions = Question.create!([
                                { body: 'Ruby question 1', test_id: tests[0].id },
                                { body: 'Ruby question 2', test_id: tests[0].id },
@@ -47,6 +36,25 @@ questions = Question.create!([
                                { body: 'Alien question 2', test_id: tests[3].id },
                                { body: 'Alien question 3', test_id: tests[3].id }
                              ])
+
+TestCompletion.create!([
+                         { user_id: users[0].id, test_id: tests[3].id,
+                           current_question_id: tests[3].questions.first.id },
+                         { user_id: users[1].id, test_id: tests[0].id,
+                           current_question_id: tests[0].questions.first.id },
+                         { user_id: users[1].id, test_id: tests[1].id,
+                           current_question_id: tests[1].questions.first.id },
+                         { user_id: users[1].id, test_id: tests[2].id,
+                           current_question_id: tests[2].questions.first.id },
+                         { user_id: users[2].id, test_id: tests[1].id,
+                           current_question_id: tests[1].questions.first.id },
+                         { user_id: users[2].id, test_id: tests[2].id,
+                           current_question_id: tests[2].questions.first.id },
+                         { user_id: users[3].id, test_id: tests[1].id,
+                           current_question_id: tests[1].questions.first.id },
+                         { user_id: users[3].id, test_id: tests[3].id,
+                           current_question_id: tests[3].questions.first.id }
+                       ])
 
 Answer.create!([
                  { body: 'Incorrect answer 1 for Ruby question 1', correct: false, question_id: questions[0].id },
