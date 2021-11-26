@@ -5,6 +5,8 @@ class TestCompletion < ApplicationRecord
 
   before_validation :set_current_question
 
+  SUCCESS_RATIO = 85
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
@@ -23,7 +25,7 @@ class TestCompletion < ApplicationRecord
   end
 
   def successful?
-    calculate_result > 85
+    calculate_result > SUCCESS_RATIO
   end
 
   private
