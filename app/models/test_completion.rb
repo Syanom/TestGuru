@@ -22,6 +22,10 @@ class TestCompletion < ApplicationRecord
     (correct_questions.to_f / test.questions.count * 100).round(2)
   end
 
+  def successful?
+    calculate_result > 85
+  end
+
   private
 
   def correct_answer?(answer_ids)
