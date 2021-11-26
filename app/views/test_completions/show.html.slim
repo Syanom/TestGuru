@@ -1,0 +1,21 @@
+h1
+  | Passing the 
+  = @test_completion.test.title
+  |  test
+
+h2
+  | Question 
+  = @test_completion.current_question_number
+  |  out of 
+  = @test_completion.test.questions.count
+
+b = @test_completion.current_question.body
+
+= form_with url: test_completion_path(@test_completion), local: true, method: :put do |form|
+  = form.collection_check_boxes :answer_ids,
+  @test_completion.current_question.answers, :id, :body, include_hidden: false do |b|
+    p
+      = b.check_box id: "answer_ids_#{b.object.id}"
+      = b.label
+
+  p = form.submit 'Next question'
