@@ -1,0 +1,17 @@
+h1
+  | The 
+  = @test_completion.test.title
+  |  Test was completed!
+
+- if @test_completion.calculate_result < 85
+  h2 style="color:red"
+    | Your result is: 
+    = @test_completion.calculate_result
+    | %, you haven't passed the test
+- else
+  h2 style="color:green"
+    | Your result is: 
+    = @test_completion.calculate_result
+    | %, you have passed the test!
+
+= link_to 'Back to Tests', tests_path
