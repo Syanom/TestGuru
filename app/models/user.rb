@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  include Auth
-
   has_many :authored_tests, dependent: :destroy
   has_many :test_completions, dependent: :destroy
   has_many :tests, through: :test_completions, source: :test
