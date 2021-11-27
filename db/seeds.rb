@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create!([{ name: 'Vitaly Kurennov', email: 'ViKur@somemail.com' }, { name: 'Yan Dupliy', email: 'yandupliy@gmail.com' }, { name: 'Ivan Ivanov', email: 'IvIv@somemail.com' },
-                      { name: 'Petr Petrov', email: 'PePe@somemail.com' }])
+# Passwords for all users 'Qwe12345'
+users = User.create!([{ name: 'Vitaly Kurennov', email: 'ViKur@somemail.com', password_digest: '7848055df09311652b2ac208549e981c9c529f88' }, { name: 'Yan Dupliy', email: 'yandupliy@gmail.com', password_digest: '7848055df09311652b2ac208549e981c9c529f88' }, { name: 'Ivan Ivanov', email: 'IvIv@somemail.com', password_digest: '7848055df09311652b2ac208549e981c9c529f88' },
+                      { name: 'Petr Petrov', email: 'PePe@somemail.com', password_digest: '7848055df09311652b2ac208549e981c9c529f88' }])
 
 categories = Category.create!([{ name: 'Backend' }, { name: 'Frontend' }, { name: 'Fullstack' }])
 
