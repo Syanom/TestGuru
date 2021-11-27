@@ -6,9 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Passwords for all users 'Qwe12345'
-users = User.create!([{ name: 'Vitaly Kurennov', email: 'ViKur@somemail.com', password_digest: '7848055df09311652b2ac208549e981c9c529f88' }, { name: 'Yan Dupliy', email: 'yandupliy@gmail.com', password_digest: '7848055df09311652b2ac208549e981c9c529f88' }, { name: 'Ivan Ivanov', email: 'IvIv@somemail.com', password_digest: '7848055df09311652b2ac208549e981c9c529f88' },
-                      { name: 'Petr Petrov', email: 'PePe@somemail.com', password_digest: '7848055df09311652b2ac208549e981c9c529f88' }])
+# Passwords for all users 'Qwer1234'
+users = User.create!([
+                       { name: 'Vitaly Kurennov', email: 'ViKur@somemail.com',
+                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' },
+                       { name: 'Yan Dupliy', email: 'yandupliy@gmail.com',
+                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' },
+                       { name: 'Ivan Ivanov', email: 'IvIv@somemail.com',
+                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' },
+                       { name: 'Petr Petrov', email: 'PePe@somemail.com',
+                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' }
+                     ])
 
 categories = Category.create!([{ name: 'Backend' }, { name: 'Frontend' }, { name: 'Fullstack' }])
 
