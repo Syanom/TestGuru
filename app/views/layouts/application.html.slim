@@ -16,5 +16,7 @@ html
         | Welcome, 
         b = current_user.name
         |  Guru
+        br
+        = link_to 'Logout', logout_path
     = yield
     = render 'shared/footer'
