@@ -4,21 +4,21 @@
   p
     = form.label :name
     br
-    = form.text_field :name, id: :user_name, required: true
+    = form.text_field :name, id: :user_name
 
   p
     = form.label :email
     br
-    = form.email_field :email, id: :user_email, required: true
+    = form.text_field :email, id: :user_email
 
   p
     = form.label :password
     br
-    = form.password_field :password, id: :user_password, required: true
+    = form.password_field :password, id: :user_password
 
   p
     = form.label :password_confirmation
     br
-    = form.password_field :password_confirmation, id: :user_password_confirmation, required: true
+    = form.password_field :password_confirmation, id: :user_password_confirmation
 
   p = form.submit
