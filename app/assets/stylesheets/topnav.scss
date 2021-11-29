@@ -1,0 +1,36 @@
+.topnav {
+  background-color: #545a55;
+  color: #ddd;
+  overflow: hidden;
+  padding: 14px 16px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #ffc46b;
+  color: white;
+}
+
+.topnav.link {
+  float: right;
+}
+
+.topnav.site-name {
+  float: left;
+}
+
+.topnav.greetings {
+  display: inline-block;
+}
