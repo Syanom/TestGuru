@@ -11,5 +11,10 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
+    - if logged_in?
+      p class="nav user"
+        | Welcome, 
+        b = current_user.name
+        |  Guru
     = yield
     = render 'shared/footer'
