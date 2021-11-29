@@ -3,7 +3,7 @@ class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy start]
 
   def start
-    @user = User.first
+    @user = current_user
     @user.tests.push(@test)
     redirect_to @user.test_completion(@test)
   end
