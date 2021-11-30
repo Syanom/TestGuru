@@ -3,9 +3,8 @@ class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy start]
 
   def start
-    @user = current_user
-    @user.tests.push(@test)
-    redirect_to @user.test_completion(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.test_completion(@test)
   end
 
   def index
