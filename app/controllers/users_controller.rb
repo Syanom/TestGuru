@@ -13,10 +13,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def authenticate(password_string)
-    digest(password_string) == password_digest ? self : false
-  end
-
   private
 
   def user_params
