@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   validates :name, presence: true
-  validates :email, presence: true, format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
-  validate :email_is_unique
+  validates :email, presence: true, uniqueness: true, format: URI::MailTo::EMAIL_REGEXP
 
   has_many :authored_tests, dependent: :destroy
   has_many :test_completions, dependent: :destroy
@@ -15,11 +14,5 @@ class User < ApplicationRecord
 
   def test_completion(test)
     test_completions.order(created_at: :desc).find_by(test_id: test.id)
-  end
-
-  private
-
-  def email_is_unique
-    errors.add(:email, 'is already used for registrarion') if User.where(email: email).exists?
   end
 end
