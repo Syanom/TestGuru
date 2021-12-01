@@ -9,13 +9,17 @@
 # Passwords for all users 'Qwer1234'
 users = User.create!([
                        { name: 'Vitaly Kurennov', email: 'ViKur@somemail.com',
-                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' },
+                         confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
+                         password: 'Qwer1234' },
                        { name: 'Yan Dupliy', email: 'yandupliy@gmail.com',
-                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' },
+                         confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
+                         password: 'Qwer1234' },
                        { name: 'Ivan Ivanov', email: 'IvIv@somemail.com',
-                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' },
+                         confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
+                         password: 'Qwer1234' },
                        { name: 'Petr Petrov', email: 'PePe@somemail.com',
-                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' }
+                         confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
+                         password: 'Qwer1234' }
                      ])
 
 categories = Category.create!([{ name: 'Backend' }, { name: 'Frontend' }, { name: 'Fullstack' }])
