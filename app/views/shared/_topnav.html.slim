@@ -1,0 +1,11 @@
+div class='topnav'
+  = link_to 'Test Guru', root_path, class: 'topnav site-name'
+  - if logged_in?
+    span class='topnav greetings'
+      | Welcome, 
+      b = current_user.name
+      |  Guru
+    = link_to 'Logout', logout_path, method: :delete, class: 'topnav link'
+  - else
+    = link_to 'Sign In', login_path, class: 'topnav link'
+    = link_to 'Sign Up', signup_path, class: 'topnav link'

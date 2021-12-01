@@ -1,10 +1,12 @@
 class User < ApplicationRecord
-  has_many :authored_tests, dependent: :destroy
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true, format: URI::MailTo::EMAIL_REGEXP
+
+  has_many :authored_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
   has_many :test_completions, dependent: :destroy
   has_many :tests, through: :test_completions, source: :test
 
-  validates :name, presence: true
-  validates :email, presence: true
+  has_secure_password
 
   def tests_by_level(level)
     completed_tests.level(level)

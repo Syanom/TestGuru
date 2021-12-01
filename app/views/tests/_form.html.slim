@@ -15,8 +15,4 @@
     = form.collection_select :category_id, Category.all, :id, :name, prompt: true
 
   p
-    = form.label :author_id
-    = form.collection_select :author_id, User.all, :id, :name, prompt: true
-
-  p
     = form.submit
