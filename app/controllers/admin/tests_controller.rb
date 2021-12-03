@@ -22,7 +22,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.authored_tests.build(test_params)
 
     if @test.save
-      redirect_to @test
+      redirect_to admin_test_path(@test)
     else
       render :new
     end
@@ -32,7 +32,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to admin_test_path(@test)
     else
       render :edit
     end
