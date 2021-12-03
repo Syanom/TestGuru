@@ -1,21 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-# Passwords for all users 'Qwer1234'
 users = User.create!([
-                       { name: 'Vitaly Kurennov', email: 'ViKur@somemail.com',
-                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' },
-                       { name: 'Yan Dupliy', email: 'yandupliy@gmail.com',
-                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' },
-                       { name: 'Ivan Ivanov', email: 'IvIv@somemail.com',
-                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' },
-                       { name: 'Petr Petrov', email: 'PePe@somemail.com',
-                         password_digest: '$2a$12$2BqdArMR7jYicmrEng8aj.O78MZZE7S0GQW8q8jQimBhp8M0/l9z2' }
+                       { first_name: 'Vitaly', last_name: 'Kurennov', email: 'ViKur@somemail.com',
+                         confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
+                         password: 'Qwer1234', type: 'Admin' },
+                       { first_name: 'Yan', last_name: 'Dupliy', email: 'yandupliy@gmail.com',
+                         confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
+                         password: 'Qwer1234', type: 'Admin' },
+                       { first_name: 'Ivan', last_name: 'Ivanov', email: 'IvIv@somemail.com',
+                         confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
+                         password: 'Qwer1234' },
+                       { first_name: 'Petr', last_name: 'Petrov', email: 'PePe@somemail.com',
+                         confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
+                         password: 'Qwer1234' }
                      ])
 
 categories = Category.create!([{ name: 'Backend' }, { name: 'Frontend' }, { name: 'Fullstack' }])

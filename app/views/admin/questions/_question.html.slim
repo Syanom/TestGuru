@@ -1,0 +1,13 @@
+tr
+  td = question.body
+  - if current_page?(admin_question_path)
+    |  | 
+  - unless current_page?(admin_question_path)
+    td = link_to 'Show', admin_question_path(question)
+  td = link_to 'Edit', edit_admin_question_path(question)
+  - if current_page?(admin_question_path)
+    |  | 
+  td = link_to 'Delete',
+                admin_question_path(question),
+                method: :delete,
+                data: { confirm: 'Are you sure?' }

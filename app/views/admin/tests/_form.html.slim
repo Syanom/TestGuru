@@ -1,0 +1,18 @@
+= form_with model: [:admin, @test], local: true do |form|
+
+  = render 'shared/errors', resource: @test
+
+  p
+    = form.label :title
+    = form.text_field :title
+
+  p
+    = form.label :level
+    = form.number_field :level
+
+  p
+    = form.label :category_id
+    = form.collection_select :category_id, Category.all, :id, :name, prompt: true
+
+  p
+    = form.submit
