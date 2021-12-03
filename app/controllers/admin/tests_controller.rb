@@ -1,10 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :find_test, only: %i[show edit update destroy start]
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_completion(@test)
-  end
+  before_action :find_test, only: %i[show edit update destroy]
 
   def index
     @tests = Test.all
