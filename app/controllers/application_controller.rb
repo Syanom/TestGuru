@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
+    unless current_user.first_name.blank? && current_user.last_name.blank?
+      flash.notice = "Hello, #{current_user.first_name} #{current_user.last_name}!"
+    end
     current_user.is_a?(Admin) ? admin_tests_path : stored_location_for(resource)
   end
 
