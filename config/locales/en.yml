@@ -15,6 +15,17 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    
+    footer:
+      name: "Yan Dupliy"
+      thinknetica_link: "Study project in Thinknetica online school"
+
+    topnav:
+      project_name: "Test Guru"
+      greetings: "Welcome, %{first_name} %{last_name} Guru"
+      logout: "Logout"
+      sign_in: "Login"
+      sign_up: "Sign Up"
 
   tests:
     index:
