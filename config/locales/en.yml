@@ -1,6 +1,10 @@
 en:
-  create_new_test: "Create New Test"
-  edit_test: "Edit ${title} Test"
+  actions:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    sure?: "Are you sure?"
+    back: "Back"
 
   helpers:
     submit:
@@ -66,27 +70,13 @@ en:
         actions: "Actions"
         number_of_questions: "Number of questions"
         new_test: "New test"
-      new:
-        back: "Back"
-      edit:
-        back: "Back"
       show:
         new_question: "New question"
         body: "Body"
         actions: "Actions"
-        back: "Back"
-      test:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
-        sure?: "Are you sure?"
-
-    questions:
-      question:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
-        sure?: "Are you sure?"
+      for_helper:
+        create_new_test: "Create New Test"
+        edit_test: "Edit %{title} Test"
     
     topnav:
       project_name: "Test Guru"

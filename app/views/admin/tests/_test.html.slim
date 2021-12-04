@@ -4,9 +4,9 @@ tr
   - unless current_page?(admin_test_path(test))
     td = test.level
     td = test.questions.count
-    td = link_to t('.show'), admin_test_path(test)
-  td = link_to t('.edit'), edit_admin_test_path(test)
-  td = link_to t('.delete'),
+    td = link_to t('actions.show'), admin_test_path(test)
+  td = link_to t('actions.edit'), edit_admin_test_path(test)
+  td = link_to t('actions.delete'),
                 admin_test_path(test),
                 method: :delete,
-                data: { confirm: t('.sure?') }
+                data: { confirm: t('actions.sure?') }

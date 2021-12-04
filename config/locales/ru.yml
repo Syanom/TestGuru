@@ -1,6 +1,10 @@
 ru:
-  create_new_test: "Создать Новый Тест"
-  edit_test: "Изменить ${title} Тест"
+  actions:
+    show: "Подробнее"
+    edit: "Изменить"
+    delete: "Удалить"
+    sure?: "Вы уверены?"
+    back: "Назад"
 
   helpers:
     submit:
@@ -68,27 +72,13 @@ ru:
         actions: "Действия"
         number_of_questions: "Количество вопросов"
         new_test: "Создать тест"
-      new:
-        back: "Назад"
-      edit:
-        back: "Назад"
       show:
         new_question: "Создать новый вопрос"
         body: "Тело"
         actions: "Действия"
-        back: "Назад"
-      test:
-        show: "Подробнее"
-        edit: "Изменить"
-        delete: "Удалить"
-        sure?: "Вы уверены?"
-
-    questions:
-      question:
-        show: "Подробнее"
-        edit: "Изменить"
-        delete: "Удалить"
-        sure?: "Вы уверены?"
+      for_helper:
+        create_new_test: "Создать Новый Тест"
+        edit_test: "Изменить %{title} Тест"
 
     topnav:
       project_name: "Тест Гуру"

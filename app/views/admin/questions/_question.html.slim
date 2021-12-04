@@ -3,11 +3,11 @@ tr
   - if current_page?(admin_question_path)
     |  | 
   - unless current_page?(admin_question_path)
-    td = link_to t('.show'), admin_question_path(question)
-  td = link_to t('.edit'), edit_admin_question_path(question)
+    td = link_to t('actions.show'), admin_question_path(question)
+  td = link_to t('actions.edit'), edit_admin_question_path(question)
   - if current_page?(admin_question_path)
     |  | 
-  td = link_to t('.delete'),
+  td = link_to t('actions.delete'),
                 admin_question_path(question),
                 method: :delete,
-                data: { confirm: '.sure?' }
+                data: { confirm: 'actions.sure?' }
