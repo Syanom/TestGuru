@@ -1,7 +1,4 @@
-h1
-  | The 
-  = @test_completion.test.title
-  |  Test was completed!
+h1 = t('.header', title: @test_completion.test.title)
 
 - if @test_completion.successful?
   h2 style="color:green"
