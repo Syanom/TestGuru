@@ -1,4 +1,7 @@
 ru:
+  create_new_test: "Создать Новый Тест"
+  edit_test: "Изменить ${title} Тест"
+
   helpers:
     submit:
       test:
@@ -31,8 +34,14 @@ ru:
 
   tests:
     index:
-      header:
-        "Доступные тесты"
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      actions: "Действия"
+      number_of_questions: "Количество вопросов"
+    test:
+      start: "Начать"
 
   test_completions:
     result:
@@ -41,11 +50,43 @@ ru:
   admin:
     tests:
       create:
-        success:
-          "Тест создан"
+        success: "Тест создан"
       index:
-        header:
-          "Доступные тесты"
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        actions: "Действия"
+        number_of_questions: "Количество вопросов"
+        new_test: "Создать тест"
+      new:
+        back: "Назад"
+      edit:
+        back: "Назад"
+      show:
+        new_question: "Создать новый вопрос"
+        body: "Тело"
+        actions: "Действия"
+        back: "Назад"
+      test:
+        show: "Подробнее"
+        edit: "Изменить"
+        delete: "Удалить"
+        sure?: "Вы уверены?"
+
+    questions:
+      question:
+        show: "Подробнее"
+        edit: "Изменить"
+        delete: "Удалить"
+        sure?: "Вы уверены?"
+
+    topnav:
+      project_name: "Тест Гуру"
+      greetings: "Привет, %{first_name} %{last_name} Админ-Гуру"
+      logout: "Выйти"
+      sign_in: "Войти"
+      sign_up: "Зарегистрироваться"
 
   tests_mailer:
     completed_test:

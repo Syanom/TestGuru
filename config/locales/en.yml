@@ -1,4 +1,7 @@
 en:
+  create_new_test: "Create New Test"
+  edit_test: "Edit ${title} Test"
+
   helpers:
     submit:
       test:
@@ -29,8 +32,14 @@ en:
 
   tests:
     index:
-      header:
-        "Tests available"
+      header: "Tests available"
+      title: "Title"
+      level: "Level"
+      category: "Category"
+      actions: "Actions"
+      number_of_questions: "Number of questions"
+    test:
+      start: "Start"
   
   test_completions:
     result:
@@ -39,11 +48,43 @@ en:
   admin:
     tests:
       create:
-        success:
-          "Test was successfully created"
+        success: "Test was successfully created"
       index:
-        header:
-          "Tests available"
+        header: "Tests available"
+        title: "Title"
+        level: "Level"
+        category: "Category"
+        actions: "Actions"
+        number_of_questions: "Number of questions"
+        new_test: "New test"
+      new:
+        back: "Back"
+      edit:
+        back: "Back"
+      show:
+        new_question: "New question"
+        body: "Body"
+        actions: "Actions"
+        back: "Back"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure?: "Are you sure?"
+
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        sure?: "Are you sure?"
+    
+    topnav:
+      project_name: "Test Guru"
+      greetings: "Welcome, %{first_name} %{last_name} Admin-Guru"
+      logout: "Logout"
+      sign_in: "Login"
+      sign_up: "Sign Up"
 
   tests_mailer:
     completed_test:
