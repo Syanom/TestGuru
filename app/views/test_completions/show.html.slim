@@ -1,13 +1,6 @@
-h1
-  | Passing the 
-  = @test_completion.test.title
-  |  test
+h1 = t('.passing', title: @test_completion.test.title)
 
-h2
-  | Question 
-  = @test_completion.current_question_number
-  |  out of 
-  = @test_completion.test.questions.count
+h2 = t('.current_question', current_question_number: @test_completion.current_question_number, questions_amount: @test_completion.test.questions.count)
 
 b = @test_completion.current_question.body
 
@@ -18,4 +11,4 @@ b = @test_completion.current_question.body
       = b.check_box id: "answer_ids_#{b.object.id}"
       = b.label
 
-  p = form.submit 'Next question'
+  p = form.submit t('.next_question')

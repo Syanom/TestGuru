@@ -1,11 +1,8 @@
 div class='topnav'
-  = link_to 'Test Guru', root_path, class: 'topnav site-name'
+  = link_to t('.project_name'), root_path, class: 'topnav site-name'
   - if user_signed_in?
-    span class='topnav greetings'
-      | Welcome, 
-      b = "#{current_user.first_name} #{current_user.last_name}"
-      |  Guru
-    = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'topnav link'
+    span class='topnav greetings' = t('.greetings', first_name: current_user.first_name, last_name: current_user.last_name)
+    = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'topnav link'
   - else
-    = link_to 'Sign In', new_user_session_path, class: 'topnav link'
-    = link_to 'Sign Up', new_user_registration_path, class: 'topnav link'
+    = link_to t('.sign_in'), new_user_session_path, class: 'topnav link'
+    = link_to t('.sign_up'), new_user_registration_path, class: 'topnav link'

@@ -1,0 +1,92 @@
+ru:
+  actions:
+    show: "Подробнее"
+    edit: "Изменить"
+    delete: "Удалить"
+    sure?: "Вы уверены?"
+    back: "Назад"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    
+    footer:
+      name: "Ян Дуплий"
+      thinknetica_link: "Учебный проект в онлайн-школе Thinknetica"
+
+    topnav:
+      project_name: "Тест Гуру"
+      greetings: "Привет, %{first_name} %{last_name} Гуру"
+      logout: "Выйти"
+      sign_in: "Войти"
+      sign_up: "Зарегистрироваться"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      actions: "Действия"
+      number_of_questions: "Количество вопросов"
+    test:
+      start: "Начать"
+
+  test_completions:
+    result:
+      header: "Тест %{title} успешно завершен!"
+      back: "Назад к тестам"
+      positive_result: "Ваш результат: %{result}, вы сдали тест!"
+      negative_result: "Ваш результат: %{result}, вы не сдали тест"
+    show:
+      passing: "Вы проходите %{title} тест"
+      current_question: "Вопрос номер %{current_question_number} из %{questions_amount}"
+      next_question: "Следующий вопрос"
+
+  admin:
+    tests:
+      create:
+        success: "Тест создан"
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        actions: "Действия"
+        number_of_questions: "Количество вопросов"
+        new_test: "Создать тест"
+      show:
+        new_question: "Создать новый вопрос"
+        body: "Тело"
+        actions: "Действия"
+      for_helper:
+        create_new_test: "Создать Новый Тест"
+        edit_test: "Изменить %{title} Тест"
+
+    topnav:
+      project_name: "Тест Гуру"
+      greetings: "Привет, %{first_name} %{last_name} Админ-Гуру"
+      logout: "Выйти"
+      sign_in: "Войти"
+      sign_up: "Зарегистрироваться"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы прошли TestGuru тест!"

@@ -1,17 +1,8 @@
-h1
-  | The 
-  = @test_completion.test.title
-  |  Test was completed!
+h1 = t('.header', title: @test_completion.test.title)
 
 - if @test_completion.successful?
-  h2 style="color:green"
-    | Your result is: 
-    = @test_completion.calculate_result
-    | %, you have passed the test!
+  h2 style="color:green" = t('.positive_result', result: @test_completion.calculate_result)
 - else
-  h2 style="color:red"
-    | Your result is: 
-    = @test_completion.calculate_result
-    | %, you haven't passed the test
+  h2 style="color:red" = t('.negative_result', result: @test_completion.calculate_result)
 
-= link_to 'Back to Tests', tests_path
+= link_to t('.back'), tests_path

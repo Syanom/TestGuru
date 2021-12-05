@@ -2,7 +2,8 @@ footer
   p
     = current_year
     |  | 
-    | Yan Dupliy | 
+    = t('.name')
+    |  | 
     = github_url('Syanom', 'TestGuru')
     |  | 
-    = link_to 'Study project in Thinknetica online school', 'https://thinknetica.com/', target: "_blank"
+    = link_to t('.thinknetica_link'), 'https://thinknetica.com/', target: "_blank"

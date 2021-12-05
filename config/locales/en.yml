@@ -1,3 +1,94 @@
+en:
+  actions:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    sure?: "Are you sure?"
+    back: "Back"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"  
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+    select:
+      prompt: "Chose"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    
+    footer:
+      name: "Yan Dupliy"
+      thinknetica_link: "Study project in Thinknetica online school"
+
+    topnav:
+      project_name: "Test Guru"
+      greetings: "Welcome, %{first_name} %{last_name} Guru"
+      logout: "Logout"
+      sign_in: "Login"
+      sign_up: "Sign Up"
+
+  tests:
+    index:
+      header: "Tests available"
+      title: "Title"
+      level: "Level"
+      category: "Category"
+      actions: "Actions"
+      number_of_questions: "Number of questions"
+    test:
+      start: "Start"
+  
+  test_completions:
+    result:
+      header: "Test %{title} finished!"
+      back: "Back to tests"
+      positive_result: "Your result is: %{result}, you have passed the test!"
+      negative_result: "Your result is: %{result}, you haven't passed the test"
+    show:
+      passing: "Passing the %{title} test"
+      current_question: "Question %{current_question_number} out of %{questions_amount}"
+      next_question: "Next question"
+
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created"
+      index:
+        header: "Tests available"
+        title: "Title"
+        level: "Level"
+        category: "Category"
+        actions: "Actions"
+        number_of_questions: "Number of questions"
+        new_test: "New test"
+      show:
+        new_question: "New question"
+        body: "Body"
+        actions: "Actions"
+      for_helper:
+        create_new_test: "Create New Test"
+        edit_test: "Edit %{title} Test"
+    
+    topnav:
+      project_name: "Test Guru"
+      greetings: "Welcome, %{first_name} %{last_name} Admin-Guru"
+      logout: "Logout"
+      sign_in: "Login"
+      sign_up: "Sign Up"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed TestGuru test!"
+
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
@@ -28,6 +119,3 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
-en:
-  hello: "Hello world"
