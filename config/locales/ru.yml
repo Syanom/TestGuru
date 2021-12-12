@@ -31,7 +31,7 @@ ru:
       name: "Ян Дуплий"
       thinknetica_link: "Учебный проект в онлайн-школе Thinknetica"
 
-    topnav:
+    nav:
       project_name: "Тест Гуру"
       greetings: "Привет, %{first_name} %{last_name} Гуру"
       logout: "Выйти"
