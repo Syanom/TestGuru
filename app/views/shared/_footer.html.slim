@@ -1,9 +1,10 @@
-footer
-  p
-    = current_year
-    |  | 
-    = t('.name')
-    |  | 
-    = github_url('Syanom', 'TestGuru')
-    |  | 
-    = link_to t('.thinknetica_link'), 'https://thinknetica.com/', target: "_blank"
+footer class="footer fixed-bottom mb-2"
+  .container
+    span class="text-muted"
+      = current_year
+      |  | 
+      = t('.name')
+      |  | 
+      = github_url('Syanom', 'TestGuru')
+      |  | 
+      = link_to t('.thinknetica_link'), 'https://thinknetica.com/', target: "_blank", class: 'text-muted'

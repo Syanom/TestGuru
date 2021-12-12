@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     unless current_user.first_name.blank? && current_user.last_name.blank?
-      flash.notice = "Hello, #{current_user.first_name} #{current_user.last_name}!"
+      flash.notice = t('flash.greetings', first_name: current_user.first_name, last_name: current_user.last_name)
     end
     current_user.is_a?(Admin) ? admin_tests_path : stored_location_for(resource)
   end

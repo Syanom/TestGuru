@@ -1,12 +1,15 @@
 nav class='navbar navbar-light bg-light'
-  = link_to t('.project_name'), root_path, class: 'navbar-brand'
+  span
+    = link_to t('.project_name'), root_path, class: 'navbar-brand'
+    - if current_user.is_a?(Admin)
+      = link_to t('.admin_panel'), admin_tests_path, class: 'navbar-brand'
   - if user_signed_in?
     div class="float-right"
       span class='navbar-text' = t('.greetings', first_name: current_user.first_name, last_name: current_user.last_name)
       |  | 
-      = link_to t('.logout'), destroy_user_session_path, method: :delete
+      = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'text-dark'
   - else
     div class="float-right"
-      = link_to t('.sign_in'), new_user_session_path
+      = link_to t('.sign_in'), new_user_session_path, class: 'text-dark'
       |  | 
-      = link_to t('.sign_up'), new_user_registration_path
+      = link_to t('.sign_up'), new_user_registration_path, class: 'text-dark'

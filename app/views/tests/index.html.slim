@@ -1,11 +1,11 @@
 h1 = t('.header')
 
-table
+table class="table"
   tr
-    th = t('.title')
-    th = t('.category')
-    th = t('.level')
-    th = t('.number_of_questions')
-    th = t('.actions')
+    th scope="col" = t('.title')
+    th scope="col" = t('.category')
+    th scope="col" class="text-center" = t('.level')
+    th scope="col" class="text-center" = t('.number_of_questions')
+    th scope="col" = t('.actions')
 
   = render @tests
