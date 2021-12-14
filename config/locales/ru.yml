@@ -6,6 +6,9 @@ ru:
     sure?: "Вы уверены?"
     back: "Назад"
 
+  flash:
+    greetings: "Привет, %{first_name} %{last_name}"
+
   helpers:
     submit:
       test:
@@ -31,12 +34,13 @@ ru:
       name: "Ян Дуплий"
       thinknetica_link: "Учебный проект в онлайн-школе Thinknetica"
 
-    topnav:
+    nav:
       project_name: "Тест Гуру"
       greetings: "Привет, %{first_name} %{last_name} Гуру"
       logout: "Выйти"
       sign_in: "Войти"
       sign_up: "Зарегистрироваться"
+      admin_panel: "Панель Администратора"
 
   tests:
     index:
@@ -80,12 +84,13 @@ ru:
         create_new_test: "Создать Новый Тест"
         edit_test: "Изменить %{title} Тест"
 
-    topnav:
+    nav:
       project_name: "Тест Гуру"
       greetings: "Привет, %{first_name} %{last_name} Админ-Гуру"
       logout: "Выйти"
       sign_in: "Войти"
       sign_up: "Зарегистрироваться"
+      admin_panel: "Панель Администратора"
 
   tests_mailer:
     completed_test:

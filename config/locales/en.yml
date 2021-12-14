@@ -29,12 +29,16 @@ en:
       name: "Yan Dupliy"
       thinknetica_link: "Study project in Thinknetica online school"
 
-    topnav:
+    nav:
       project_name: "Test Guru"
       greetings: "Welcome, %{first_name} %{last_name} Guru"
       logout: "Logout"
       sign_in: "Login"
       sign_up: "Sign Up"
+      admin_panel: "Admin Panel"
+
+  flash:
+    greetings: "Hello, %{first_name} %{last_name}"
 
   tests:
     index:
@@ -78,12 +82,13 @@ en:
         create_new_test: "Create New Test"
         edit_test: "Edit %{title} Test"
     
-    topnav:
+    nav:
       project_name: "Test Guru"
       greetings: "Welcome, %{first_name} %{last_name} Admin-Guru"
       logout: "Logout"
       sign_in: "Login"
       sign_up: "Sign Up"
+      admin_panel: "Admin Panel"
 
   tests_mailer:
     completed_test:
