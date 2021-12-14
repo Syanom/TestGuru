@@ -64,7 +64,7 @@ ru:
       current_question: "Вопрос номер %{current_question_number} из %{questions_amount}"
       next_question: "Следующий вопрос"
     gist:
-      success: "Gist успешно сохранен"
+      success: Gist успешно сохранен
       failure: "Не удалось сохранить gist"
 
   admin:

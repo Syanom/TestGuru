@@ -62,7 +62,7 @@ en:
       current_question: "Question %{current_question_number} out of %{questions_amount}"
       next_question: "Next question"
     gist:
-      success: "Gist was successfully created"
+      success: Gist was successfully created
       failure: "Gist creation failed"
 
   admin:

@@ -1,16 +1,16 @@
-h1 = t('.passing', title: @test_completion.test.title)
+h2 = t('.passing', title: @test_completion.test.title)
 
-h2 = t('.current_question', current_question_number: @test_completion.current_question_number, questions_amount: @test_completion.test.questions.count)
+p = t('.current_question', current_question_number: @test_completion.current_question_number, questions_amount: @test_completion.test.questions.count)
 
-p
-  b = @test_completion.current_question.body
+h3 = @test_completion.current_question.body
 
 = form_with url: test_completion_path(@test_completion), local: true, method: :put do |form|
   = form.collection_check_boxes :answer_ids,
   @test_completion.current_question.answers, :id, :body, include_hidden: false do |b|
-    p
-      = b.check_box id: "answer_ids_#{b.object.id}"
-      = b.label
+    .form-check.px-0
+      = b.check_box(class: 'form-check-input', id: "answer_ids_#{b.object.id}")
+      = b.label(class: 'form-check-label')
 
-  p = link_to 'Gist Question', gist_test_completion_path(@test_completion), method: :post
-  p = form.submit t('.next_question')
+  = form.submit t('.next_question'), class: 'btn btn-primary'
+
+p = button_to 'Gist Question', gist_test_completion_path(@test_completion), method: :post, class: 'btn btn-primary'

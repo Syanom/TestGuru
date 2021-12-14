@@ -18,10 +18,11 @@ class TestCompletionsController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_completion.current_question).call
+    result_url = GistQuestionService.new(@test_completion.current_question).call.html_url
 
-    flash_options = if result.success?
-                      { notice: t('.success') }
+    flash_options = if result_url
+                      { notice: view_context.link_to(t('.success'), result_url, target: '_blank',
+                                                                                class: 'link-success') }
                     else
                       { alert: t('.failure') }
                     end
