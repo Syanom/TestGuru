@@ -99,6 +99,13 @@ en:
       sign_up: "Sign Up"
       admin_panel: "Admin Panel"
 
+    gists:
+      index:
+        header: "All Gists"
+        question: "Question"
+        url: "Gist hash"
+        user: "User email"
+
   tests_mailer:
     completed_test:
       subject: "You just completed TestGuru test!"
