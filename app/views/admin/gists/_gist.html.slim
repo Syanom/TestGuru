@@ -1,4 +1,4 @@
 tr
-  td = link_to gist.question.body[0, 25], admin_question_path(gist.question)
-  td = link_to gist.url.split('/').last, gist.url, target: '_blank'
+  td = link_to gist_question(gist), admin_question_path(gist.question)
+  td = link_to gist_hash(gist), gist.url, target: '_blank'
   td = gist.author.email
