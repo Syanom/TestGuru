@@ -63,8 +63,9 @@ ru:
       passing: "Вы проходите %{title} тест"
       current_question: "Вопрос номер %{current_question_number} из %{questions_amount}"
       next_question: "Следующий вопрос"
+      gist_question: "Добавить вопрос в Gist"
     gist:
-      success: Gist успешно сохранен
+      success: "Gist успешно сохранен"
       failure: "Не удалось сохранить gist"
 
   admin:

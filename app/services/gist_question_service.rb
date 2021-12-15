@@ -11,15 +11,11 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
-  def success?
-    true
-  end
-
   private
 
   def gist_params
     {
-      description: "A question about #{@test.title} from TestGuru",
+      description: I18n.t('gist_question_service.description', title: @test.title),
       files: {
         'test-guru-question.txt' => {
           content: gist_content

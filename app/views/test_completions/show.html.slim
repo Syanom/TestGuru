@@ -13,4 +13,4 @@ h3 = @test_completion.current_question.body
 
   = form.submit t('.next_question'), class: 'btn btn-primary'
 
-p = button_to 'Gist Question', gist_test_completion_path(@test_completion), method: :post, class: 'btn btn-primary'
+p = button_to t('.gist_question'), gist_test_completion_path(@test_completion), method: :post, class: 'btn btn-light'
