@@ -1,6 +1,4 @@
 class GistQuestionService
-  ACCESS_TOKEN = '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'.freeze
-
   def initialize(question)
     @question = question
     @test = @question.test
@@ -31,6 +29,6 @@ class GistQuestionService
   end
 
   def setup_http_client
-    @client = Octokit::Client.new(access_token: ACCESS_TOKEN)
+    @client = Octokit::Client.new(access_token: ENV['GITHUB_GIST_ACCESS_TOKEN'])
   end
 end
