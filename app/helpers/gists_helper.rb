@@ -1,6 +1,6 @@
 module GistsHelper
   def gist_question(gist)
-    gist.question.body.turncate(25)
+    gist.question.body.truncate(25)
   end
 
   def gist_hash(gist)
