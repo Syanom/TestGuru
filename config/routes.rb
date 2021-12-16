@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :gists, only: :create
+
   resources :test_completions, only: %i[show update] do
     member do
       get :result
@@ -23,5 +25,6 @@ Rails.application.routes.draw do
         resources :answers, except: :index, shallow: true
       end
     end
+    resources :gists, only: :index
   end
 end

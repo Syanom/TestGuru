@@ -19,6 +19,9 @@ en:
     select:
       prompt: "Chose"
 
+  gist_question_service:
+    description: "A question about %{title} from TestGuru"
+
   shared:
     errors:
       header:
@@ -61,6 +64,12 @@ en:
       passing: "Passing the %{title} test"
       current_question: "Question %{current_question_number} out of %{questions_amount}"
       next_question: "Next question"
+      gist_question: "Gist Question"
+  
+  gists:
+    create:
+      success: "Gist was successfully created"
+      failure: "Gist creation failed"
 
   admin:
     tests:
@@ -89,6 +98,13 @@ en:
       sign_in: "Login"
       sign_up: "Sign Up"
       admin_panel: "Admin Panel"
+
+    gists:
+      index:
+        header: "All Gists"
+        question: "Question"
+        url: "Gist hash"
+        user: "User email"
 
   tests_mailer:
     completed_test:

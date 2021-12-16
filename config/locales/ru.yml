@@ -9,6 +9,9 @@ ru:
   flash:
     greetings: "Привет, %{first_name} %{last_name}"
 
+  gist_question_service:
+    description: "Вопрос про %{title} из Тест Гуру"
+
   helpers:
     submit:
       test:
@@ -63,6 +66,12 @@ ru:
       passing: "Вы проходите %{title} тест"
       current_question: "Вопрос номер %{current_question_number} из %{questions_amount}"
       next_question: "Следующий вопрос"
+      gist_question: "Добавить вопрос в Gist"
+
+  gists:
+    create:
+      success: "Gist успешно сохранен"
+      failure: "Не удалось сохранить gist"
 
   admin:
     tests:
@@ -91,6 +100,13 @@ ru:
       sign_in: "Войти"
       sign_up: "Зарегистрироваться"
       admin_panel: "Панель Администратора"
+
+    gists:
+      index:
+        header: "Все Gists"
+        question: "Вопрос"
+        url: "Gist hash"
+        user: "Email пользователя"
 
   tests_mailer:
     completed_test:
