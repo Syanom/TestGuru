@@ -1,9 +1,10 @@
 h1 = t('.header')
 
 table class="table"
-  tr
-    th scope="col" = t('.question')
-    th scope="col" = t('.url')
-    th scope="col" = t('.user')
+  thead
+    tr
+      th scope="col" = t('.question')
+      th scope="col" = t('.url')
+      th scope="col" = t('.user')
 
-  = render @gists
+  tbody = render @gists
