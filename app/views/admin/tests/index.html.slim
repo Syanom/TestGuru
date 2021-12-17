@@ -1,17 +1,18 @@
-h1 = t('.header')
+.container
+  h1 = t('.header')
 
-p = link_to t('.new_test'), new_admin_test_path
+  p = link_to t('.new_test'), new_admin_test_path
 
-table class="table"
-  thead
-    tr
-      th class="sort-by-title pointer"
-        = t('.title')
-        = octicon 'arrow-up', class: 'text-success hide'
-        = octicon 'arrow-down', class: 'text-success hide'
-      th = t('.category')
-      th = t('.level')
-      th = t('.number_of_questions')
-      th class="text-center" colspan="3" = t('.actions')
+  table class="table"
+    thead
+      tr
+        th class="sort-by-title pointer"
+          = t('.title')
+          = octicon 'arrow-up', class: 'text-success hide'
+          = octicon 'arrow-down', class: 'text-success hide'
+        th = t('.category')
+        th = t('.level')
+        th = t('.number_of_questions')
+        th class="text-center" colspan="3" = t('.actions')
 
-  tbody = render @tests
+    tbody = render @tests

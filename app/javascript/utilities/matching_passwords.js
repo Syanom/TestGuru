@@ -1,13 +1,13 @@
 document.addEventListener('turbolinks:load', function () {
-  var form = document.querySelector('.new_user')
+  const form = document.querySelector('.new_user')
   if (form) {
     form.addEventListener('input', checkPasswords)
   }
 })
 
 function checkPasswords() {
-  var password = document.getElementById('user_password').value
-  var passwordConfirmation = document.getElementById('user_password_confirmation').value
+  const password = document.getElementById('user_password').value
+  const passwordConfirmation = document.getElementById('user_password_confirmation').value
   if ((password != '') && (passwordConfirmation != '')) {
     unhideHint(password, passwordConfirmation)
   } else {
