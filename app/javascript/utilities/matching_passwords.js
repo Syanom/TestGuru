@@ -1,6 +1,7 @@
 document.addEventListener('turbolinks:load', function () {
-  if (document.querySelector('.matching-passwords')) {
-    document.querySelector('.new_user').addEventListener('input', checkPasswords)
+  var form = document.querySelector('.new_user')
+  if (form) {
+    form.addEventListener('input', checkPasswords)
   }
 })
 
