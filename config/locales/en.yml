@@ -5,6 +5,7 @@ en:
     delete: "Delete"
     sure?: "Are you sure?"
     back: "Back"
+    cancel: "Cancel"
 
   helpers:
     submit:
@@ -90,6 +91,8 @@ en:
       for_helper:
         create_new_test: "Create New Test"
         edit_test: "Edit %{title} Test"
+      form_inline:
+        submit: 'OK'
     
     nav:
       project_name: "Test Guru"
