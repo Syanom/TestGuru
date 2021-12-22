@@ -1,6 +1,5 @@
 document.addEventListener('turbolinks:load', function () {
   const progressBar = document.querySelector('.progress-bar')
-  console.log(progressBar)
   if (progressBar) {
     setProgress(progressBar)
   }
