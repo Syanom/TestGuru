@@ -1,6 +1,9 @@
 h2 = t('.passing', title: @test_completion.test.title)
 
-p = t('.current_question', current_question_number: @test_completion.current_question_number, questions_amount: @test_completion.test.questions.count)
+p class="mb-0" = t('.current_question', current_question_number: @test_completion.current_question_number, questions_amount: @test_completion.test.questions.count)
+.progress.mb-3
+  = content_tag :div, '', class: 'progress-bar', style: 'width: 25%', 'aria-valuenow': '25', 'aria-valuemin': '0', 'area-valuemax': '100',
+                data: { question_number: @test_completion.current_question_number, questions_quantity: @test_completion.test.questions.count }
 
 h3 = @test_completion.current_question.body
 

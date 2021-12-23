@@ -5,6 +5,7 @@ ru:
     delete: "Удалить"
     sure?: "Вы уверены?"
     back: "Назад"
+    cancel: "Отмена"
 
   flash:
     greetings: "Привет, %{first_name} %{last_name}"
@@ -92,6 +93,8 @@ ru:
       for_helper:
         create_new_test: "Создать Новый Тест"
         edit_test: "Изменить %{title} Тест"
+      form_inline:
+        submit: "ОК"
 
     nav:
       project_name: "Тест Гуру"
