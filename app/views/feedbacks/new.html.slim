@@ -1,0 +1,12 @@
+= form_with model: @feedback, local: true do |form|
+
+  = render 'shared/errors', resource: @feedback
+
+  h2 = t('.header')
+
+  .form-group
+    = form.label :content, class: 'my-3'
+    br
+    = form.text_area :content, id: :feedback_content, rows: '15', class: 'form-control'
+
+  = form.submit t('.send_feedback'), class: 'btn btn-primary my-3'

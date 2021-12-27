@@ -12,6 +12,7 @@ nav class='navbar navbar-light bg-light mx-2'
         - if current_user.is_a?(Admin)
           = link_to t('.admin_panel'), admin_tests_path
         - if user_signed_in?
+          = link_to t('.feedback'), new_feedback_path
           = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'text-dark'
         - else
           = link_to t('.sign_in'), new_user_session_path, class: 'text-dark'
