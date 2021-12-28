@@ -4,7 +4,7 @@ div class="row justify-content-center mt-3"
       | Sign up
     .card.border-primary
       .card-body    
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'new-user matching-passwords' }) do |f|
           = render 'devise/shared/error_messages', resource: resource
           .field
             = f.label :first_name
