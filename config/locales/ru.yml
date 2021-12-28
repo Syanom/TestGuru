@@ -18,6 +18,9 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
     label:
       test:
         title: "Название"
@@ -25,6 +28,9 @@ ru:
         category_id: "Категория"
       feedback:
         content: "Содержание"
+      answer:
+        body: "Тело"
+        correct: "Верный"
     select:
       prompt: "Выберите"
 
@@ -98,6 +104,16 @@ ru:
         edit_test: "Изменить %{title} Тест"
       form_inline:
         submit: "ОК"
+    
+    answers:
+      new:
+        create: "Создать ответ"
+      edit:
+        edit: "Изменить ответ"
+      show:
+        question: "Вопрос"
+        answer: "Ответ"
+        correct: "Верный"
 
     nav:
       project_name: "Тест Гуру"

@@ -12,6 +12,9 @@ en:
       test:
         create: "Create test"
         update: "Update test"  
+      answer:
+        create: "Create answer"
+        update: "Update answer"
     label:
       test:
         title: "Title"
@@ -19,6 +22,9 @@ en:
         category_id: "Category"
       feedback:
         content: "Content"
+      answer:
+        body: "Body"
+        correct: "Correct"
     select:
       prompt: "Chose"
 
@@ -96,6 +102,11 @@ en:
         edit_test: "Edit %{title} Test"
       form_inline:
         submit: 'OK'
+    answers:
+      new:
+        create: "Create answer"
+      edit:
+        edit: "Change answer"
     
     nav:
       project_name: "Test Guru"
