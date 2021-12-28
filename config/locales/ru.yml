@@ -21,6 +21,9 @@ ru:
       answer:
         create: "Создать ответ"
         update: "Обновить ответ"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
     label:
       test:
         title: "Название"
@@ -31,6 +34,8 @@ ru:
       answer:
         body: "Тело"
         correct: "Верный"
+      question:
+        body: "Тело"
     select:
       prompt: "Выберите"
 
@@ -104,6 +109,14 @@ ru:
         edit_test: "Изменить %{title} Тест"
       form_inline:
         submit: "ОК"
+
+    questions:
+      for_helper:
+        create_new_question: "Создать Новый Вопрос по  %{test_title}"
+        edit_question: "Изменить '%{body}' Вопрос"
+      show:
+        answers: "Ответы"
+        new_answer: "Создать новый ответ"
     
     answers:
       new:

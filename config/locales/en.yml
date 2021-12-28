@@ -15,6 +15,9 @@ en:
       answer:
         create: "Create answer"
         update: "Update answer"
+      question:
+        create: "Create question"
+        update: "Update question"
     label:
       test:
         title: "Title"
@@ -25,6 +28,8 @@ en:
       answer:
         body: "Body"
         correct: "Correct"
+      question:
+        body: "Body"
     select:
       prompt: "Chose"
 
@@ -103,6 +108,14 @@ en:
       form_inline:
         submit: 'OK'
     
+    questions:
+      for_helper:
+        create_new_question: "Create New Question for %{test_title}"
+        edit_question: "Change '%{body}' Question"
+      show:
+        answers: "Ответы"
+        new_answer: "Создать новый ответ"
+
     answers:
       new:
         create: "Create answer"
