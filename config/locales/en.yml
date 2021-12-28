@@ -102,11 +102,16 @@ en:
         edit_test: "Edit %{title} Test"
       form_inline:
         submit: 'OK'
+    
     answers:
       new:
         create: "Create answer"
       edit:
         edit: "Change answer"
+      show:
+        question: "Question"
+        answer: "Answer"
+        correct: "Correct"
     
     nav:
       project_name: "Test Guru"
