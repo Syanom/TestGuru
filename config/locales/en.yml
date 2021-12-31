@@ -58,6 +58,7 @@ en:
       sign_up: "Sign Up"
       admin_panel: "Admin Panel"
       feedback: "Give feedback"
+      edit_profile: "Edit Profile"
 
   flash:
     greetings: "Hello, %{first_name} %{last_name}"
@@ -138,6 +139,7 @@ en:
       sign_up: "Sign Up"
       admin_panel: "Admin Panel"
       feedback: "Give feedback"
+      edit_profile: "Edit Profile"
 
     gists:
       index:
