@@ -12,6 +12,7 @@ import '../utilities/matching_passwords'
 import '../utilities/form_inline'
 import '../utilities/progress_bar'
 import '../utilities/dropdown'
+import '../utilities/hide_greetings'
 
 Rails.start()
 Turbolinks.start()

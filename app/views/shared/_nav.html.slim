@@ -4,7 +4,7 @@ nav class='navbar border-bottom mx-2'
   
   span class='float-right'
     - if user_signed_in?
-      span class='navbar-text mx-5' = t('.greetings', first_name: current_user.first_name, last_name: current_user.last_name)
+      span class='greetings navbar-text mx-5' = t('.greetings', first_name: current_user.first_name, last_name: current_user.last_name)
     div class="dropmenu"
       div class="dropmenubtn"
         = octicon 'three-bars'
