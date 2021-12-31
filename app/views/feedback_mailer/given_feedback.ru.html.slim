@@ -1,0 +1,10 @@
+h2
+  | Обратная связь от: 
+  = @feedback.author.first_name
+  |  
+  = @feedback.author.last_name
+  | , email: 
+  = @feedback.author.email
+
+p
+  = @feedback.content

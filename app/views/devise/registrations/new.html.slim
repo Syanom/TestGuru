@@ -1,10 +1,9 @@
 div class="row justify-content-center mt-3"
   div class="col col-md-4"
-    h2 class="text-center"
-      | Sign up
+    h2 class="text-center" = t('.sign_up')
     .card.border-primary
       .card-body    
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'new-user matching-passwords' }) do |f|
           = render 'devise/shared/error_messages', resource: resource
           .field
             = f.label :first_name
@@ -22,9 +21,10 @@ div class="row justify-content-center mt-3"
             = f.label :password
             - if @minimum_password_length
               em
-                | (
+                |  
                 = @minimum_password_length
-                |  characters minimum)
+                |  
+                = t('devise.passwords.edit.characters_minimum')
             br
             = f.password_field :password, autocomplete: 'new-password'
           .field
@@ -34,5 +34,5 @@ div class="row justify-content-center mt-3"
             = octicon 'check', class: 'mx-3 text-success hide'
             = octicon 'x', class: 'mx-3 text-danger hide'
           .actions
-            = f.submit 'Sign up', class: 'btn btn-primary my-1'
+            = f.submit t('.sign_up'), class: 'btn btn-primary my-1'
         = render 'devise/shared/links'

@@ -1,6 +1,6 @@
-h1 New answer
+h1 = t('.create')
 
 p = @question.body
 
 = render 'form'
-= link_to 'Back', admin_question_path(@question)
+= link_to t('actions.back'), admin_question_path(@question)

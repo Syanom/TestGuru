@@ -12,6 +12,7 @@ html
 
   body
     = render 'admin/nav'
-    = render 'shared/flash'
-    = yield
+    .container
+      = render 'shared/flash'
+      = yield
     = render 'shared/footer'

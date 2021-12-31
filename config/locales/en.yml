@@ -12,11 +12,28 @@ en:
       test:
         create: "Create test"
         update: "Update test"  
+      answer:
+        create: "Create answer"
+        update: "Update answer"
+      question:
+        create: "Create question"
+        update: "Update question"
     label:
       test:
         title: "Title"
         level: "Level"
         category_id: "Category"
+      feedback:
+        content: "Content"
+      answer:
+        body: "Body"
+        correct: "Correct"
+      question:
+        body: "Body"
+      user:
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        current_password: "Current password"
     select:
       prompt: "Chose"
 
@@ -40,6 +57,7 @@ en:
       sign_in: "Login"
       sign_up: "Sign Up"
       admin_panel: "Admin Panel"
+      feedback: "Give feedback"
 
   flash:
     greetings: "Hello, %{first_name} %{last_name}"
@@ -94,6 +112,24 @@ en:
       form_inline:
         submit: 'OK'
     
+    questions:
+      for_helper:
+        create_new_question: "Create New Question for %{test_title}"
+        edit_question: "Change '%{body}' Question"
+      show:
+        answers: "Ответы"
+        new_answer: "Создать новый ответ"
+
+    answers:
+      new:
+        create: "Create answer"
+      edit:
+        edit: "Change answer"
+      show:
+        question: "Question"
+        answer: "Answer"
+        correct: "Correct"
+    
     nav:
       project_name: "Test Guru"
       greetings: "Welcome, %{first_name} %{last_name} Admin-Guru"
@@ -101,6 +137,7 @@ en:
       sign_in: "Login"
       sign_up: "Sign Up"
       admin_panel: "Admin Panel"
+      feedback: "Give feedback"
 
     gists:
       index:
@@ -113,33 +150,50 @@ en:
     completed_test:
       subject: "You just completed TestGuru test!"
 
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
+  feedbacks:
+    new:
+      send_feedback: "Send feedback"
+      header: "Give us feedback!"
+    create:
+      success: "Feedback has been sent successfully"
+
+  devise:
+    confirmations:
+      new:
+        resend_instructions: "Resend confirmation instructions"
+    passwords:
+      edit:
+        change_password: "Change password"
+        characters_minimum: "symbols minimum"
+        new_password: "new password"
+        confirm_new_password: "Confirm new password"
+        change_my_password: "Change my password"
+        current_password: "Current password"
+      new:
+        forgot_your_password: "Forgot your password?"
+        send_me_reset_password_instructions: "Send me password reset instructions"
+        currently_waiting_confirmation_for: "Currently waiting confirmation for:"
+    registrations:
+      edit:
+        leave_blank_if_you_don't_want_to_change_it: " (Leave blank if you don't want to change it)"
+        we_need_your_current_password_to_confirm_your_changes: " (We need your current password to confirm your changes)"
+        cancel_my_account: "Cancel my account"
+        unhappy?: "Unhappy?"
+        user: "User"
+      new:
+        sign_up: "Sign up"
+    sessions:
+      new:
+        sign_in: "Sign in"
+        remember_me: "Remember me"
+    shared:
+      links:
+        log_in: "Sign in"
+        sign_up: "Sign up"
+        forgot_your_password?: "Forgot your password?"
+        didnt_recieve_confirmation_instructions?: "Didn't recieve confirmation instructions?"
+        didnt_recieve_unlock_instructions?: "Didn't recive unlock instructions?"
+        sign_in_with: "Sign in with"
+    unlocks:
+      new:
+        resend_unlock_instructions: "Resend unlock instructions"

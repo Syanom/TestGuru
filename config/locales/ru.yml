@@ -6,6 +6,7 @@ ru:
     sure?: "Вы уверены?"
     back: "Назад"
     cancel: "Отмена"
+    update: "Обновить"
 
   flash:
     greetings: "Привет, %{first_name} %{last_name}"
@@ -18,11 +19,28 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
     label:
       test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      feedback:
+        content: "Содержание"
+      answer:
+        body: "Тело"
+        correct: "Верный"
+      question:
+        body: "Тело"
+      user:
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        current_password: "Текущий пароль"
     select:
       prompt: "Выберите"
 
@@ -45,6 +63,7 @@ ru:
       sign_in: "Войти"
       sign_up: "Зарегистрироваться"
       admin_panel: "Панель Администратора"
+      feedback: "Обратная связь"
 
   tests:
     index:
@@ -96,6 +115,24 @@ ru:
       form_inline:
         submit: "ОК"
 
+    questions:
+      for_helper:
+        create_new_question: "Создать Новый Вопрос по  %{test_title}"
+        edit_question: "Изменить '%{body}' Вопрос"
+      show:
+        answers: "Ответы"
+        new_answer: "Создать новый ответ"
+    
+    answers:
+      new:
+        create: "Создать ответ"
+      edit:
+        edit: "Изменить ответ"
+      show:
+        question: "Вопрос"
+        answer: "Ответ"
+        correct: "Верный"
+
     nav:
       project_name: "Тест Гуру"
       greetings: "Привет, %{first_name} %{last_name} Админ-Гуру"
@@ -103,6 +140,7 @@ ru:
       sign_in: "Войти"
       sign_up: "Зарегистрироваться"
       admin_panel: "Панель Администратора"
+      feedback: "Обратная связь"
 
     gists:
       index:
@@ -114,3 +152,51 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы прошли TestGuru тест!"
+
+  feedbacks:
+    new:
+      send_feedback: "Отправить обратную связь"
+      header: "Дайте нам обратную связь!"
+    create:
+      success: "Обратная связь успешно отправлена"
+
+  devise:
+    confirmations:
+      new:
+        resend_instructions: "Отправить инструкции по подтверждению"
+    passwords:
+      edit:
+        change_password: "Изменить пароль"
+        characters_minimum: "символов минимум"
+        new_password: "новый пароль"
+        confirm_new_password: "Подтвердить новый пароль"
+        change_my_password: "Изменить мой пароль"
+        current_password: "Текущий пароль"
+      new:
+        forgot_your_password: "Забыли ваш пароль?"
+        send_me_reset_password_instructions: "Отправте мне инструкции по сбросу пароля"
+        currently_waiting_confirmation_for: "В настоящее время ожидается подтверждение для:"
+    registrations:
+      edit:
+        leave_blank_if_you_don't_want_to_change_it: " (Оставте поле пустым, если не хотите изменить его)"
+        we_need_your_current_password_to_confirm_your_changes: " (Нам нужен ваш текущий пароль, чтобы подтвердить изменения)"
+        cancel_my_account: "Удалите мой аккаунт"
+        unhappy?: "Не удовлетворены?"
+        user: "Пользователя"
+      new:
+        sign_up: "Зарегистрироваться"
+    sessions:
+      new:
+        sign_in: "Войти"
+        remember_me: "Запомнить меня"
+    shared:
+      links:
+        log_in: "Войти"
+        sign_up: "Зарегистрироваться"
+        forgot_your_password?: "Забыли пароль?"
+        didnt_recieve_confirmation_instructions?: "Не получили инструкции по подтверждению?"
+        didnt_recieve_unlock_instructions?: "Не получили инструкции по разблокировке?"
+        sign_in_with: "Войти с помощью"
+    unlocks:
+      new:
+        resend_unlock_instructions: "Отправить заново инструкции по разблокировке"
