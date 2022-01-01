@@ -98,11 +98,7 @@ ru:
         success: "Тест создан"
       index:
         header: "Доступные тесты"
-        title: "Название"
-        level: "Уровень"
-        category: "Категория"
-        actions: "Действия"
-        number_of_questions: "Количество вопросов"
+        title: "Сортировать по названию"
         new_test: "Создать тест"
       show:
         new_question: "Создать новый вопрос"
@@ -113,6 +109,9 @@ ru:
         edit_test: "Изменить %{title} Тест"
       form_inline:
         submit: "ОК"
+      test:
+        questions_number: "Количество вопросов: "
+        difficulty: "Сложность: "
 
     questions:
       for_helper:

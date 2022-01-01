@@ -1,19 +1,13 @@
-h1 = t('.header')
-
-p = link_to t('.new_test'), new_admin_test_path
+h1 class="mx-3" = t('.header')
 
 = render 'shared/errors', resource: @test
 
-table class="table"
-  thead
-    tr
-      th class="sort-by-title pointer"
+.sort-by-title.pointer.mx-3.d-inline-block
         = t('.title')
         = octicon 'arrow-up', class: 'text-success hide'
         = octicon 'arrow-down', class: 'text-success hide'
-      th = t('.category')
-      th = t('.level')
-      th = t('.number_of_questions')
-      th class="text-center" colspan="3" = t('.actions')
 
-  tbody = render @tests
+.mx-2.tests 
+  .new-test.border.mx-2.my-3.p-2.d-flex.align-items-center.justify-content-center.pointer
+    = link_to (octicon 'plus'), new_admin_test_path
+  = render @tests

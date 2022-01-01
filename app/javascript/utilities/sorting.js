@@ -25,6 +25,11 @@ function sortRowsByTitle() {
     this.querySelector('.octicon-arrow-down').classList.remove('hide')
   }
 
+  const newTestButton = document.querySelector('.new-test')
+  if (newTestButton) {
+    sortedTestsArray.unshift(newTestButton)
+  }
+
   const sortedTestsContainer = document.createElement('div')
   sortedTestsContainer.classList = testsContainerClasses
 
@@ -35,18 +40,18 @@ function sortRowsByTitle() {
   testsContainer.parentNode.replaceChild(sortedTestsContainer, testsContainer)
 }
 
-function compareRowsAsc(row1, row2) {
-  const testTitle1 = row1.querySelector('.test-title').textContent
-  const testTitle2 = row2.querySelector('.test-title').textContent
+function compareRowsAsc(test1, test2) {
+  const testTitle1 = test1.querySelector('.test-title').textContent
+  const testTitle2 = test2.querySelector('.test-title').textContent
 
   if (testTitle1 < testTitle2) { return -1 }
   if (testTitle1 > testTitle2) { return 1 }
   return 0
 }
 
-function compareRowsDesc(row1, row2) {
-  const testTitle1 = row1.querySelector('.test-title').textContent
-  const testTitle2 = row2.querySelector('.test-title').textContent
+function compareRowsDesc(test1, test2) {
+  const testTitle1 = test1.querySelector('.test-title').textContent
+  const testTitle2 = test2.querySelector('.test-title').textContent
 
   if (testTitle1 < testTitle2) { return 1 }
   if (testTitle1 > testTitle2) { return -1 }

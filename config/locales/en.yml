@@ -110,6 +110,9 @@ en:
         edit_test: "Edit %{title} Test"
       form_inline:
         submit: 'OK'
+      test:
+        questions_number: "Number of questions: "
+        difficulty: "Difficutcy: "
     
     questions:
       for_helper:
