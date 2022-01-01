@@ -69,13 +69,9 @@ ru:
   tests:
     index:
       header: "Доступные тесты"
-      title: "Название"
-      level: "Уровень"
-      category: "Категория"
-      actions: "Действия"
-      number_of_questions: "Количество вопросов"
     test:
       start: "Начать"
+      questions-number: "Количество вопросов: "
 
   test_completions:
     result:

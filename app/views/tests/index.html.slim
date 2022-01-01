@@ -1,15 +1,9 @@
-h1 = t('.header')
+h1 class="mx-3" = t('.header')
 
-table class="table table-bordered"
-  thead
-    tr
-      th scope="col" class="sort-by-title pointer"
+.sort-by-title.pointer.mx-3
         = t('.title')
         = octicon 'arrow-up', class: 'text-success hide'
         = octicon 'arrow-down', class: 'text-success hide'
-      th scope="col" = t('.category')
-      th scope="col" class="text-center" = t('.level')
-      th scope="col" class="text-center" = t('.number_of_questions')
-      th scope="col" = t('.actions')
 
+.row.mx-2
   tbody = render @tests
