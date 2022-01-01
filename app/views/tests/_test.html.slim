@@ -1,8 +1,12 @@
-.test.border.col-sm-3.mx-2.my-2.p-2
-  strong class="me-1" = test.title
-  span class="me-1" = test.category.name
-  span class="me-1" = test.level
-  span class="me-1" 
-    = t('.questions-number')
-    = test.questions.count
+.test.border.mx-2.my-3.p-2.d-flex.justify-content-between.align-items-center
+  div
+    div class="me-1"
+      strong = test.title
+    div class="me-1" = test.category.name
+    div class="me-1" 
+      = t('.difficulty')
+      = test.level
+    div class="me-1"
+      = t('.questions_number')
+      = test.questions.count
   div class="me-1" = button_to t('.start'), start_test_path(test), class: 'btn btn-primary'

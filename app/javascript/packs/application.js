@@ -13,6 +13,7 @@ import '../utilities/form_inline'
 import '../utilities/progress_bar'
 import '../utilities/dropdown'
 import '../utilities/hide_greetings'
+import '../utilities/test_button_jump'
 
 Rails.start()
 Turbolinks.start()

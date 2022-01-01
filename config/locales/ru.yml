@@ -69,9 +69,11 @@ ru:
   tests:
     index:
       header: "Доступные тесты"
+      title: "Сортировать по названию"
     test:
       start: "Начать"
-      questions-number: "Количество вопросов: "
+      questions_number: "Количество вопросов: "
+      difficulty: "Сложность: "
 
   test_completions:
     result:
