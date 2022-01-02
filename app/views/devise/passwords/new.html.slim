@@ -1,12 +1,14 @@
-h2 = t('.forgot_your_password')
-.card.border-primary
-  .card-body
-    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-      = render "devise/shared/error_messages", resource: resource
-      .field
-        = f.label :email
-        br
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-      .actions
-        = f.submit t('.send_me_reset_password_instructions'), class: "btn btn-primary my-2 btn-fixed"
-    = render "devise/shared/links"
+div class="row justify-content-center mt-3"
+  div class="col col-md-4"
+    h2 = t('.forgot_your_password')
+    .card.border-primary
+      .card-body
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .field
+            = f.label :email
+            br
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+          .actions
+            = f.submit t('.send_me_reset_password_instructions'), class: "btn btn-primary my-2 btn-fixed"
+        = render "devise/shared/links"
