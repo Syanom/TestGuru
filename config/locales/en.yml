@@ -166,6 +166,7 @@ en:
     confirmations:
       new:
         resend_instructions: "Resend confirmation instructions"
+        resend_instructions_btn: "Resend"
     passwords:
       edit:
         change_password: "Change password"
