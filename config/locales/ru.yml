@@ -41,6 +41,8 @@ ru:
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         current_password: "Текущий пароль"
+        first_name: "Имя"
+        last_name: "Фамилия"
     select:
       prompt: "Выберите"
 

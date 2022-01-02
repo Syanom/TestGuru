@@ -34,6 +34,8 @@ en:
         password: "Password"
         password_confirmation: "Password confirmation"
         current_password: "Current password"
+        first_name: "First Name"
+        last_name: "Last Name"
     select:
       prompt: "Chose"
 
