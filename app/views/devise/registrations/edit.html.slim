@@ -2,40 +2,43 @@ h2
   = t('actions.edit')
   |  
   = t('.user')
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    div
-      = t('.currently_waiting_confirmation_for') 
-      = resource.unconfirmed_email
-  .field
-    = f.label :password
-    i = t(".leave_blank_if_you_don't_want_to_change_it")
-    br
-    = f.password_field :password, autocomplete: t('devise.passwords.edit.new_password')
-    - if @minimum_password_length
-      br
-      em
-        = @minimum_password_length
-        |  
-        = t("devise.passwords.edit.characters_minimum")
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: t('devise.passwords.edit.new_password')
-  .field
-    = f.label :current_password
-    i = t('.we_need_your_current_password_to_confirm_your_changes')
-    br
-    = f.password_field :current_password, autocomplete: t('devise.passwords.edit.current_password')
-  .actions
-    = f.submit t('actions.update')
-h3 = t('.cancel_my_account')
-p
-  = t('.unhappy?')
-  = button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('actions.sure?') }, method: :delete
-= link_to t('actions.back'), :back
+
+.card.border-primary
+  .card-body
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field
+        = f.label :email
+        br
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        div
+          = t('.currently_waiting_confirmation_for') 
+          = resource.unconfirmed_email
+      .field
+        = f.label :password
+        i = t(".leave_blank_if_you_don't_want_to_change_it")
+        br
+        = f.password_field :password, autocomplete: t('devise.passwords.edit.new_password')
+        - if @minimum_password_length
+          br
+          em
+            = @minimum_password_length
+            |  
+            = t("devise.passwords.edit.characters_minimum")
+      .field
+        = f.label :password_confirmation
+        br
+        = f.password_field :password_confirmation, autocomplete: t('devise.passwords.edit.new_password')
+      .field
+        = f.label :current_password
+        i = t('.we_need_your_current_password_to_confirm_your_changes')
+        br
+        = f.password_field :current_password, autocomplete: t('devise.passwords.edit.current_password')
+      .actions
+        = f.submit t('actions.update'), class: "btn btn-primary my-2"
+    h3 = t('.cancel_my_account')
+    p
+      = t('.unhappy?')
+      = button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('actions.sure?') }, method: :delete, class: "btn btn-primary"
+    = link_to t('actions.back'), :back
