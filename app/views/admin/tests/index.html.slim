@@ -7,7 +7,7 @@ h1 class="mx-3" = t('.header')
         = octicon 'arrow-up', class: 'text-success hide'
         = octicon 'arrow-down', class: 'text-success hide'
 
-.mx-2.tests 
-  div class="new-test border mx-2 my-3 p-2 d-flex align-items-center justify-content-center pointer" onclick="location.href='tests/new';"
+.mx-2.items
+  div class="new-item border mx-2 my-3 p-2 d-flex align-items-center justify-content-center pointer" onclick="location.href='tests/new';"
     = link_to (octicon 'plus'), new_admin_test_path
   = render @tests

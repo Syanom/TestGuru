@@ -4,56 +4,56 @@ document.addEventListener('turbolinks:load', function () {
 })
 
 function sortRowsByTitle() {
-  const testsContainer = document.querySelector('.tests')
-  const testsContainerClasses = testsContainer.classList
+  const itemsContainer = document.querySelector('.items')
+  const itemsContainerClasses = itemsContainer.classList
 
   // Nodelist
-  const testsArray = testsContainer.querySelectorAll('.test')
-  const sortedTestsArray = []
+  const itemsArray = itemsContainer.querySelectorAll('.item')
+  const sortedItemsArray = []
 
-  for (let i = 0; i < testsArray.length; i++) {
-    sortedTestsArray.push(testsArray[i])
+  for (let i = 0; i < itemsArray.length; i++) {
+    sortedItemsArray.push(itemsArray[i])
   }
 
   if (this.querySelector('.octicon-arrow-up').classList.contains('hide')) {
-    sortedTestsArray.sort(compareRowsAsc)
+    sortedItemsArray.sort(compareRowsAsc)
     this.querySelector('.octicon-arrow-up').classList.remove('hide')
     this.querySelector('.octicon-arrow-down').classList.add('hide')
   } else {
-    sortedTestsArray.sort(compareRowsDesc)
+    sortedItemsArray.sort(compareRowsDesc)
     this.querySelector('.octicon-arrow-up').classList.add('hide')
     this.querySelector('.octicon-arrow-down').classList.remove('hide')
   }
 
-  const newTestButton = document.querySelector('.new-test')
-  if (newTestButton) {
-    sortedTestsArray.unshift(newTestButton)
+  const newItemButton = document.querySelector('.new-item')
+  if (newItemButton) {
+    sortedItemsArray.unshift(newItemButton)
   }
 
-  const sortedTestsContainer = document.createElement('div')
-  sortedTestsContainer.classList = testsContainerClasses
+  const sortedItemsContainer = document.createElement('div')
+  sortedItemsContainer.classList = itemsContainerClasses
 
-  for (let i = 0; i < sortedTestsArray.length; i++) {
-    sortedTestsContainer.appendChild(sortedTestsArray[i])
+  for (let i = 0; i < sortedItemsArray.length; i++) {
+    sortedItemsContainer.appendChild(sortedItemsArray[i])
   }
 
-  testsContainer.parentNode.replaceChild(sortedTestsContainer, testsContainer)
+  itemsContainer.parentNode.replaceChild(sortedItemsContainer, itemsContainer)
 }
 
-function compareRowsAsc(test1, test2) {
-  const testTitle1 = test1.querySelector('.test-title').textContent
-  const testTitle2 = test2.querySelector('.test-title').textContent
+function compareRowsAsc(item1, item2) {
+  const itemTitle1 = item1.querySelector('.item-title').textContent
+  const itemTitle2 = item2.querySelector('.item-title').textContent
 
-  if (testTitle1 < testTitle2) { return -1 }
-  if (testTitle1 > testTitle2) { return 1 }
+  if (itemTitle1 < itemTitle2) { return -1 }
+  if (itemTitle1 > itemTitle2) { return 1 }
   return 0
 }
 
-function compareRowsDesc(test1, test2) {
-  const testTitle1 = test1.querySelector('.test-title').textContent
-  const testTitle2 = test2.querySelector('.test-title').textContent
+function compareRowsDesc(item1, item2) {
+  const itemTitle1 = item1.querySelector('.item-title').textContent
+  const itemTitle2 = item2.querySelector('.item-title').textContent
 
-  if (testTitle1 < testTitle2) { return 1 }
-  if (testTitle1 > testTitle2) { return -1 }
+  if (itemTitle1 < itemTitle2) { return 1 }
+  if (itemTitle1 > itemTitle2) { return -1 }
   return 0
 }
