@@ -1,7 +1,9 @@
 .test.border.mx-2.my-3.p-2.d-flex.justify-content-between.align-items-center
   div
     div class="me-1 test-title"
-      strong = test.title
+      strong 
+        = content_tag :span, test.title, class: 'test-title', data: { test_id: test.id }
+        = render 'form_inline', test: test == @test ? @test : test
     div class="me-1" = test.category.name
     div class="me-1" 
       = t('.difficulty')
