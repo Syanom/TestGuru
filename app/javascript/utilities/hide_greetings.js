@@ -1,10 +1,12 @@
 document.addEventListener('turbolinks:load', function () {
-  handleGreetings()
-  window.addEventListener('resize', handleGreetings)
+  const greetings = document.querySelector('.greetings')
+  if (greetings) {
+    handleGreetings(greetings)
+    window.addEventListener('resize', handleGreetings(greetings))
+  }
 })
 
-function handleGreetings() {
-  const greetings = document.querySelector('.greetings')
+function handleGreetings(greetings) {
   if (document.body.clientWidth < 440) {
     greetings.classList.add('hide')
   } else {

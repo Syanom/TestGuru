@@ -77,7 +77,7 @@ ru:
 
   test_completions:
     result:
-      header: "Тест %{title} успешно завершен!"
+      header: "Тест %{title} завершен!"
       back: "Назад к тестам"
       positive_result: "Ваш результат: %{result}, вы сдали тест!"
       negative_result: "Ваш результат: %{result}, вы не сдали тест"
