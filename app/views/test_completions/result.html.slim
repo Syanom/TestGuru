@@ -1,8 +1,9 @@
-h1 = t('.header', title: @test_completion.test.title)
+.col-xs-1.text-center
+  h1 = t('.header', title: @test_completion.test.title)
 
-- if @test_completion.successful?
-  h2 style="color:green" = t('.positive_result', result: @test_completion.calculate_result)
-- else
-  h2 style="color:red" = t('.negative_result', result: @test_completion.calculate_result)
+  - if @test_completion.successful?
+    h2 style="color:green" = t('.positive_result', result: @test_completion.calculate_result)
+  - else
+    h2 style="color:red" = t('.negative_result', result: @test_completion.calculate_result)
 
-= link_to t('.back'), tests_path
+  = link_to t('.back'), tests_path
