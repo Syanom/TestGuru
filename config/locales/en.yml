@@ -123,6 +123,10 @@ en:
       show:
         answers: "Ответы"
         new_answer: "Создать новый ответ"
+      question:
+        number_of_answers: "Number of answers: "
+      form_inline:
+        submit: "OK"
 
     answers:
       new:

@@ -18,7 +18,6 @@ function formInlineClickHandler(event) {
   event.preventDefault()
 
   const itemId = this.dataset.itemId
-  console.log(itemId)
   formInlineHandler(itemId)
 }
 

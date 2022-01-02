@@ -122,6 +122,10 @@ ru:
       show:
         answers: "Ответы"
         new_answer: "Создать новый ответ"
+      question:
+        number_of_answers: "Количество ответов: "
+      form_inline:
+        submit: "ОК"
     
     answers:
       new:
