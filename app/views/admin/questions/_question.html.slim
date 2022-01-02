@@ -11,16 +11,8 @@ tr
 .item.border.mx-2.my-3.p-2.d-flex.justify-content-between.align-items-center
   div
     div class="me-1 test-title"
-      strong 
-        = content_tag :span, test.title, class: 'test-title', data: { test_id: test.id }
-        = render 'form_inline', test: test == @test ? @test : test
-    div class="me-1" = test.category.name
-    div class="me-1" 
-      = t('.difficulty')
-      = test.level
-    div class="me-1"
-      = t('.questions_number')
-      = test.questions.count
+      = content_tag :span, question.body, class: 'item-title', data: { test_id: test.id }
+      = render 'form_inline', test: test == @test ? @test : test
   div class="me-1"   
     div = link_to t('actions.show'), admin_test_path(test)
     div = link_to t('actions.edit'),

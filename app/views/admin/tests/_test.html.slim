@@ -1,8 +1,8 @@
 .item.border.mx-2.my-3.p-2.d-flex.justify-content-between.align-items-center
   div
-    div class="me-1 test-title"
+    div class="me-1"
       strong 
-        = content_tag :span, test.title, class: 'item-title', data: { test_id: test.id }
+        = content_tag :span, test.title, class: 'item-title', data: { item_id: test.id }
         = render 'form_inline', test: test == @test ? @test : test
     div class="me-1" = test.category.name
     div class="me-1" 
@@ -15,11 +15,11 @@
     div = link_to t('actions.show'), admin_test_path(test)
     div = link_to t('actions.edit'),
               edit_admin_test_path(test),
-              data: { test_id: test.id },
+              data: { item_id: test.id },
               class: 'form-inline-edit-link'
     div = link_to t('actions.cancel'),
               edit_admin_test_path(test),
-              data: { test_id: test.id },
+              data: { item_id: test.id },
               class: 'form-inline-cancel-link hide'
     div = link_to t('actions.delete'),
                 admin_test_path(test),
