@@ -8,5 +8,5 @@ h2 = t('.resend_instructions')
         br
         = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
       .actions
-        = f.submit t('.resend_instructions_btn'), class: "btn btn-primary btn-block my-2"
+        = f.submit t('.resend_instructions_btn'), class: "btn btn-primary my-2"
     = render "devise/shared/links"
