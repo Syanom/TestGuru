@@ -1,8 +1,9 @@
 .item.border.mx-2.my-3.p-2.d-flex.justify-content-between.align-items-center
   div
     div class="me-1"
-      = content_tag :span, question.body, class: 'item-title', data: { item_id: question.id }
-      = render 'admin/questions/form_inline', question: question == @question ? @question : question
+      strong
+        = content_tag :span, question.body, class: 'item-title', data: { item_id: question.id }
+        = render 'admin/questions/form_inline', question: question == @question ? @question : question
       div
         = t('.number_of_answers') 
         = question.answers.count

@@ -1,16 +1,14 @@
-.mx-3
-  h1
-    = @test.title
-    |  
-    = @test.category.name
+.mx-1
+  h1 = @test.title 
+  h2 = @test.category.name
 
 
-.mx-2.items
+.items
   div class="new-item border mx-2 my-3 p-2 d-flex align-items-center justify-content-center pointer" onclick="location.href='#{@test.id}/questions/new';"
     = link_to (octicon 'plus'), "#{@test.id}/questions/new"
   = render @questions
 
-.mx-3
+.mx-1
   = link_to t('actions.edit'), edit_admin_test_path
   |  | 
   = link_to t('actions.delete'), admin_test_path,

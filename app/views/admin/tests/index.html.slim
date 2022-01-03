@@ -1,13 +1,13 @@
-h1 class="mx-3" = t('.header')
+h1 class="mx-2" = t('.header')
 
 = render 'shared/errors', resource: @test
 
-.sort-by-title.pointer.mx-3.d-inline-block
+.sort-by-title.pointer.mx-2.d-inline-block
         = t('.title')
         = octicon 'arrow-up', class: 'text-success hide'
         = octicon 'arrow-down', class: 'text-success hide'
 
-.mx-2.items
+.items
   div class="new-item border mx-2 my-3 p-2 d-flex align-items-center justify-content-center pointer" onclick="location.href='tests/new';"
     = link_to (octicon 'plus'), new_admin_test_path
   = render @tests
