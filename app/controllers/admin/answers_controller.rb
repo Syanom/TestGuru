@@ -1,5 +1,5 @@
 class Admin::AnswersController < Admin::BaseController
-  before_action :find_answer, only: %i[show edit update destroy]
+  before_action :find_answer, only: %i[show edit update update_inline destroy]
   before_action :find_question, only: %i[new create]
 
   def show; end
@@ -25,6 +25,14 @@ class Admin::AnswersController < Admin::BaseController
       redirect_to admin_answer_path(@answer)
     else
       redirect_to :edit
+    end
+  end
+
+  def update_inline
+    if @answer.update(answer_params)
+      redirect_to admin_question_path(@answer.question)
+    else
+      render :edit
     end
   end
 
