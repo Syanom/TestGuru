@@ -136,6 +136,8 @@ ru:
         question: "Вопрос"
         answer: "Ответ"
         correct: "Верный"
+      form_inline:
+        submit: "ОК"
 
     nav:
       project_name: "Тест Гуру"
