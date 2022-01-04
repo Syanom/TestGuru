@@ -41,6 +41,8 @@ ru:
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         current_password: "Текущий пароль"
+        first_name: "Имя"
+        last_name: "Фамилия"
     select:
       prompt: "Выберите"
 
@@ -64,21 +66,20 @@ ru:
       sign_up: "Зарегистрироваться"
       admin_panel: "Панель Администратора"
       feedback: "Обратная связь"
+      edit_profile: "Редактировать Профиль"
 
   tests:
     index:
       header: "Доступные тесты"
-      title: "Название"
-      level: "Уровень"
-      category: "Категория"
-      actions: "Действия"
-      number_of_questions: "Количество вопросов"
+      title: "Сортировать по названию"
     test:
       start: "Начать"
+      questions_number: "Количество вопросов: "
+      difficulty: "Сложность: "
 
   test_completions:
     result:
-      header: "Тест %{title} успешно завершен!"
+      header: "Тест %{title} завершен!"
       back: "Назад к тестам"
       positive_result: "Ваш результат: %{result}, вы сдали тест!"
       negative_result: "Ваш результат: %{result}, вы не сдали тест"
@@ -99,11 +100,7 @@ ru:
         success: "Тест создан"
       index:
         header: "Доступные тесты"
-        title: "Название"
-        level: "Уровень"
-        category: "Категория"
-        actions: "Действия"
-        number_of_questions: "Количество вопросов"
+        title: "Сортировать по названию"
         new_test: "Создать тест"
       show:
         new_question: "Создать новый вопрос"
@@ -114,6 +111,9 @@ ru:
         edit_test: "Изменить %{title} Тест"
       form_inline:
         submit: "ОК"
+      test:
+        questions_number: "Количество вопросов: "
+        difficulty: "Сложность: "
 
     questions:
       for_helper:
@@ -122,6 +122,10 @@ ru:
       show:
         answers: "Ответы"
         new_answer: "Создать новый ответ"
+      question:
+        number_of_answers: "Количество ответов: "
+      form_inline:
+        submit: "ОК"
     
     answers:
       new:
@@ -132,6 +136,8 @@ ru:
         question: "Вопрос"
         answer: "Ответ"
         correct: "Верный"
+      form_inline:
+        submit: "ОК"
 
     nav:
       project_name: "Тест Гуру"
@@ -141,6 +147,7 @@ ru:
       sign_up: "Зарегистрироваться"
       admin_panel: "Панель Администратора"
       feedback: "Обратная связь"
+      edit_profile: "Редактировать Профиль"
 
     gists:
       index:
@@ -164,6 +171,7 @@ ru:
     confirmations:
       new:
         resend_instructions: "Отправить инструкции по подтверждению"
+        resend_instructions_btn: "Отправить"
     passwords:
       edit:
         change_password: "Изменить пароль"

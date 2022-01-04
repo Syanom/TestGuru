@@ -8,7 +8,7 @@ document.addEventListener('turbolinks:load', function () {
 function setProgress(progressBar) {
   const questionNumber = progressBar.dataset.questionNumber
   const questionsQuantity = progressBar.dataset.questionsQuantity
-  const progress = Math.round(questionNumber / questionsQuantity * 100)
+  const progress = Math.round((questionNumber - 1) / questionsQuantity * 100)
   progressBar.ariaValueNow = progress
   progressBar.style.width = progress + '%'
 }

@@ -1,22 +1,27 @@
-tr
-  td class="align-middle"
-    = content_tag :span, test.title, class: 'test-title', data: { test_id: test.id }
-    = render 'form_inline', test: test == @test ? @test : test
-  td class="align-middle" = test.category.name
-  td class="align-middle" = test.level
-  td class="align-middle" = test.questions.count
-  td class="align-middle" = link_to t('actions.show'), admin_test_path(test)
-  td class="align-middle"
-    = link_to t('actions.edit'),
+.item.border.mx-2.my-3.p-2.d-flex.justify-content-between.align-items-center
+  div
+    div class="me-1"
+      strong 
+        = content_tag :span, test.title, class: 'item-title', data: { item_id: test.id }
+        = render 'form_inline', test: test == @test ? @test : test
+    div class="me-1" = test.category.name
+    div class="me-1" 
+      = t('.difficulty')
+      = test.level
+    div class="me-1"
+      = t('.questions_number')
+      = test.questions.count
+  div class="me-1"   
+    div = link_to t('actions.show'), admin_test_path(test)
+    div = link_to t('actions.edit'),
               edit_admin_test_path(test),
-              data: { test_id: test.id },
+              data: { item_id: test.id },
               class: 'form-inline-edit-link'
-    = link_to t('actions.cancel'),
+    div = link_to t('actions.cancel'),
               edit_admin_test_path(test),
-              data: { test_id: test.id },
+              data: { item_id: test.id },
               class: 'form-inline-cancel-link hide'
-  td class="align-middle" = link_to t('actions.delete'),
+    div = link_to t('actions.delete'),
                 admin_test_path(test),
                 method: :delete,
                 data: { confirm: t('actions.sure?') }
- 

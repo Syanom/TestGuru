@@ -1,10 +1,10 @@
-nav class='navbar navbar-light bg-light mx-2'
+nav class='navbar border-bottom mx-2'
   span
     = link_to t('.project_name'), root_path, class: 'navbar-brand'
   
   span class='float-right'
     - if user_signed_in?
-      span class='navbar-text mx-5' = t('.greetings', first_name: current_user.first_name, last_name: current_user.last_name)
+      span class='greetings navbar-text mx-2' = t('.greetings', first_name: current_user.first_name, last_name: current_user.last_name)
     div class="dropmenu"
       div class="dropmenubtn"
         = octicon 'three-bars'
@@ -12,6 +12,7 @@ nav class='navbar navbar-light bg-light mx-2'
         - if current_user.is_a?(Admin)
           = link_to t('.admin_panel'), admin_tests_path
         - if user_signed_in?
+          = link_to t('.edit_profile'), edit_user_registration_path
           = link_to t('.feedback'), new_feedback_path
           = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'text-dark'
         - else

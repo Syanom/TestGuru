@@ -1,8 +1,23 @@
-tr
-  td = question.body
-  td = link_to t('actions.show'), admin_question_path(question)
-  td = link_to t('actions.edit'), edit_admin_question_path(question)
-  td = link_to t('actions.delete'),
+.item.border.mx-2.my-3.p-2.d-flex.justify-content-between.align-items-center
+  div
+    div class="me-1"
+      strong
+        = content_tag :span, question.body, class: 'item-title', data: { item_id: question.id }
+        = render 'admin/questions/form_inline', question: question == @question ? @question : question
+      div
+        = t('.number_of_answers') 
+        = question.answers.count
+  div class="me-1"   
+    div = link_to t('actions.show'), admin_question_path(question)
+    div = link_to t('actions.edit'),
+              edit_admin_question_path(question),
+              data: { item_id: question.id },
+              class: 'form-inline-edit-link'
+    div = link_to t('actions.cancel'),
+              edit_admin_question_path(question),
+              data: { item_id: question.id },
+              class: 'form-inline-cancel-link hide'
+    div = link_to t('actions.delete'),
                 admin_question_path(question),
                 method: :delete,
-                data: { confirm: 'actions.sure?' }
+                data: { confirm: t('actions.sure?') }

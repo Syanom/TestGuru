@@ -10,10 +10,10 @@ h3 = @test_completion.current_question.body
 = form_with url: test_completion_path(@test_completion), local: true, method: :put do |form|
   = form.collection_check_boxes :answer_ids,
   @test_completion.current_question.answers, :id, :body, include_hidden: false do |b|
-    .form-check.px-0
+    .form-check
       = b.check_box(class: 'form-check-input', id: "answer_ids_#{b.object.id}")
       = b.label(class: 'form-check-label')
 
-  = form.submit t('.next_question'), class: 'btn btn-primary'
+  = form.submit t('.next_question'), class: 'btn btn-primary mt-2'
 
 p = button_to t('.gist_question'), gists_path(test_completion: { id: @test_completion }), method: :post, class: 'btn btn-light'

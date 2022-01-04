@@ -1,0 +1,9 @@
+= form_with model: [:admin, answer],
+            url: update_inline_admin_answer_path(answer),
+            local: true,
+            class: 'form-inline hide',
+            data: { item_id: answer.id } do |form|
+  .input-group
+    = form.text_field :body, class: 'form-control'
+    .input-group-prepend.mx-2
+      = form.submit t('.submit'), class: 'btn btn-primary'

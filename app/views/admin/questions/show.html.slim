@@ -1,15 +1,16 @@
-h1 = @question.body
+.mx-1
+  h1 = @question.body
 
-h2 = t('.answers')
-= link_to t('.new_answer'), new_admin_question_answer_path(@question)
-
-ol
+.items
+  div class="new-item border mx-2 my-3 p-2 d-flex align-items-center justify-content-center pointer" onclick="location.href='#{new_admin_question_answer_path(@question)}';"
+    = link_to (octicon 'plus'), new_admin_question_answer_path(@question)
   = render @question.answers
 
-= link_to t('actions.edit'), edit_admin_question_path(@question)
-|  | 
-= link_to t('actions.delete'), admin_question_path, method: :delete, data: { confirm: t('actions.sure?') }
+.mx-1
+  = link_to t('actions.edit'), edit_admin_question_path(@question)
+  |  | 
+  = link_to t('actions.delete'), admin_question_path,
+            method: :delete, data: { confirm: t('actions.sure?') }
+  br
+  = link_to t('actions.back'), admin_test_path(@question.test)
 
-br
-
-= link_to t('actions.back'), admin_test_path(@question.test)

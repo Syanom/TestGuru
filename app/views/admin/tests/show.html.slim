@@ -1,20 +1,14 @@
-.container
-  h1
-    = @test.title
-    |  
-    = @test.category.name
+.mx-1
+  h1 = @test.title 
+  h2 = @test.category.name
 
-  p = link_to t('.new_question'), "#{@test.id}/questions/new"
 
-  table class='table'
-    thead
-      tr
-        th = t('.body')
-        th colspan="3" = t('.actions')
+.items
+  div class="new-item border mx-2 my-3 p-2 d-flex align-items-center justify-content-center pointer" onclick="location.href='#{@test.id}/questions/new';"
+    = link_to (octicon 'plus'), "#{@test.id}/questions/new"
+  = render @questions
 
-    tbody = render @questions
-
-  br
+.mx-1
   = link_to t('actions.edit'), edit_admin_test_path
   |  | 
   = link_to t('actions.delete'), admin_test_path,

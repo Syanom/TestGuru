@@ -2,9 +2,7 @@ class Admin::TestsController < Admin::BaseController
   before_action :find_test, only: %i[show edit update destroy update_inline]
   before_action :set_tests, only: %i[index update_inline]
 
-  def index
-    @tests = Test.all
-  end
+  def index; end
 
   def show
     @questions = @test.questions

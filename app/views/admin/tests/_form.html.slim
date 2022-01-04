@@ -4,15 +4,18 @@
 
   p
     = form.label :title
+    br
     = form.text_field :title
 
   p
     = form.label :level
+    br
     = form.number_field :level
 
   p
     = form.label :category_id
+    br
     = form.collection_select :category_id, Category.all, :id, :name, prompt: true
 
   p
-    = form.submit
+    = form.submit class: "btn btn-primary"
