@@ -15,4 +15,8 @@ class TimerService
       end
     end
   end
+
+  def self.translate_time(hours, minutes, seconds)
+    hours * 3600 + minutes * 60 + seconds
+  end
 end
