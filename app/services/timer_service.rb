@@ -1,9 +1,16 @@
 class TimerService
   attr_reader :time_left, :time_spent
 
-  def initialize
+  def initialize(seconds)
     @time_spent = 0
+    start_timer(seconds)
   end
+
+  def self.translate_time(hours, minutes, seconds)
+    hours * 3600 + minutes * 60 + seconds
+  end
+
+  private
 
   def start_timer(seconds)
     @time_left = seconds.positive? ? seconds : 0
@@ -14,9 +21,5 @@ class TimerService
         @time_spent += 1
       end
     end
-  end
-
-  def self.translate_time(hours, minutes, seconds)
-    hours * 3600 + minutes * 60 + seconds
   end
 end

@@ -4,6 +4,9 @@ class TestCompletion < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :set_current_question
+  after_initialize :set_timer
+
+  attr_reader :timer
 
   SUCCESS_RATIO = 85
 
@@ -52,5 +55,9 @@ class TestCompletion < ApplicationRecord
 
   def set_current_question
     self.current_question = next_question
+  end
+
+  def set_timer
+    @timer = TimerService.new(test.timer)
   end
 end
