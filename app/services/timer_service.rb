@@ -6,7 +6,7 @@ class TimerService
   end
 
   def start_timer(seconds)
-    @time_left = seconds
+    @time_left = seconds.positive? ? seconds : 0
     Thread.new do
       seconds.downto(1) do
         sleep 1
