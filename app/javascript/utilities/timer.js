@@ -20,7 +20,7 @@ function updateTimer() {
   const timeLeft = document.querySelector('.time-left')
   const deadline = new Date(timer.dataset.deadline)
   const testCompletionID = timer.dataset.testCompletionId
-  if (deadline - new Date() < 0) { window.location.href = '/test_completions/' + testCompletionID + '/result' }
+  if (deadline - new Date() <= 0) { window.location.href = '/test_completions/' + testCompletionID + '/result' }
   timeLeft.innerHTML = calculateTimeLeft(deadline)
 }
 
