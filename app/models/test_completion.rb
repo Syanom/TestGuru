@@ -4,19 +4,21 @@ class TestCompletion < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :set_current_question
-  after_initialize :set_timer
-
-  attr_reader :timer
+  before_create :set_timer
 
   SUCCESS_RATIO = 85
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    if deadline.nil? && correct_answer?(answer_ids)
+      self.correct_questions += 1
+    elsif correct_answer?(answer_ids) && DateTime.current <= deadline
+      self.correct_questions += 1
+    end
     save!
   end
 
   def completed?
-    current_question.nil?
+    deadline.nil? ? current_question.nil? : current_question.nil? || DateTime.current >= deadline
   end
 
   def current_question_number
@@ -58,6 +60,6 @@ class TestCompletion < ApplicationRecord
   end
 
   def set_timer
-    @timer = TimerService.new(test.timer)
+    self.deadline = DateTime.current + test.timer.seconds if test.timer.positive?
   end
 end

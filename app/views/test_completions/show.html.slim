@@ -1,8 +1,6 @@
 .d-flex.justify-content-between
   h2 = t('.passing', title: @test_completion.test.title)
-  div
-    = octicon 'clock'
-    = @test_completion.timer.time_left
+  .timer
 
 p class="mb-0" = t('.current_question', current_question_number: @test_completion.current_question_number, questions_amount: @test_completion.test.questions.count)
 .progress.mb-3
