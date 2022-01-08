@@ -21,7 +21,7 @@ tests = Test.create!([
                        { title: 'HTML', level: 1, category: categories[1],
                          author: users[0], timer: 80 },
                        { title: 'CSS', level: 1, category: categories[1],
-                         author: users[0], timer: 80 },
+                         author: users[0], timer: 3700 },
                        { title: 'Introduction in Alien programming languages', level: 5,
                          category: categories[2], author: users[1], timer: 10 }
                      ])

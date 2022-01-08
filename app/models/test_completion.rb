@@ -33,6 +33,10 @@ class TestCompletion < ApplicationRecord
     calculate_result > SUCCESS_RATIO
   end
 
+  def deadline_for_js
+    deadline.to_s
+  end
+
   private
 
   def correct_answer?(answer_ids)
