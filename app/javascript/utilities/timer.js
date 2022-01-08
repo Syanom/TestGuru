@@ -8,9 +8,11 @@ document.addEventListener('turbolinks:load', function () {
 })
 
 function createTimer(timer) {
-  timer.classList.remove('hide')
-  updateTimer()
-  testCompletionTimerId = setInterval(updateTimer, 1000)
+  if (timer.dataset.deadline) {
+    timer.classList.remove('hide')
+    updateTimer()
+    testCompletionTimerId = setInterval(updateTimer, 1000)
+  }
 }
 
 function updateTimer() {
