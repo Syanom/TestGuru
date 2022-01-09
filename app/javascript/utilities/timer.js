@@ -10,16 +10,15 @@ document.addEventListener('turbolinks:load', function () {
 function createTimer(timer) {
   if (timer.dataset.deadline) {
     timer.classList.remove('hide')
-    updateTimer()
-    testCompletionTimerId = setInterval(updateTimer, 1000)
+    const timeLeft = document.querySelector('.time-left')
+    const deadline = new Date(timer.dataset.deadline)
+    const testCompletionID = timer.dataset.testCompletionId
+    updateTimer(timeLeft, deadline, testCompletionID)
+    testCompletionTimerId = setInterval(updateTimer, 1000, timeLeft, deadline, testCompletionID)
   }
 }
 
-function updateTimer() {
-  const timer = document.querySelector('.timer')
-  const timeLeft = document.querySelector('.time-left')
-  const deadline = new Date(timer.dataset.deadline)
-  const testCompletionID = timer.dataset.testCompletionId
+function updateTimer(timeLeft, deadline, testCompletionID) {
   if (deadline - new Date() <= 0) { window.location.href = '/test_completions/' + testCompletionID + '/result' }
   timeLeft.innerHTML = calculateTimeLeft(deadline)
 }
