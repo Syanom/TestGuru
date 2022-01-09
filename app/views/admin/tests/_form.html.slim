@@ -17,21 +17,13 @@
     br
     = form.collection_select :category_id, Category.all, :id, :name, prompt: true
   
-  .row.mb-3
-    .col-auto
-      = form.label :timer_hours
-      br
-      = form.number_field :timer_hours, class: 'timer-number-field'
-
-    .col-auto
-      = form.label :timer_minutes
-      br
-      = form.number_field :timer_minutes, class: 'timer-number-field'
-    
-    .col-auto
-      = form.label :timer_seconds
-      br
-      = form.number_field :timer_seconds, class: 'timer-number-field'
+  div = t('.timer')
+  .mb-3
+    = form.number_field :timer_hours, class: 'timer-number-field'
+    |  : 
+    = form.number_field :timer_minutes, class: 'timer-number-field'
+    |  : 
+    = form.number_field :timer_seconds, class: 'timer-number-field'
 
   p
     = form.submit class: "btn btn-primary"
