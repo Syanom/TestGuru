@@ -25,7 +25,7 @@ function updateTimer(timeLeft, deadline, testCompletionID) {
 
 function calculateTimeLeft(deadline) {
   const totalSeconds = Math.round((deadline - new Date()) / 1000)
-  if (totalSeconds < 0) { return '00:00' }
+  if (totalSeconds <= 0) { return '00:00' }
   let hours = Math.floor(totalSeconds / 3600)
   if (hours < 1) { hours = '' } else { hours = hours + ':' }
   let minutes = Math.floor((totalSeconds % 3600) / 60)

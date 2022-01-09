@@ -1,16 +1,15 @@
 document.addEventListener('turbolinks:load', function () {
   const items = document.querySelectorAll('.item')
   if (items.length > 0) {
-    jumpButton()
-    window.addEventListener('resize', jumpButton)
+    jumpButton(items)
+    window.addEventListener('resize', jumpButton.bind(null, items))
   }
 })
 
-function jumpButton() {
-  const items = document.querySelectorAll('.item')
+function jumpButton(items) {
   if (document.body.clientWidth < 365) {
-    for (let test of items) { test.classList.remove('d-flex') }
+    for (let item of items) { item.classList.remove('d-flex') }
   } else {
-    for (let test of items) { test.classList.add('d-flex') }
+    for (let item of items) { item.classList.add('d-flex') }
   }
 }
