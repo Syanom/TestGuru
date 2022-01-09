@@ -12,6 +12,18 @@ class Test < ApplicationRecord
     greater_than_or_equal_to: 0
   }
   validates_uniqueness_of :title, scope: :level
+  validates :timer_hours, numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 0
+  }
+  validates :timer_minutes, numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 0
+  }
+  validates :timer_seconds, numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 0
+  }
 
   scope :tests_by_category, lambda { |name|
                               joins(:category)

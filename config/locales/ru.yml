@@ -30,6 +30,9 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        timer_hours: "Часы"
+        timer_minutes: "Минуты"
+        timer_seconds: "Секунды"
       feedback:
         content: "Содержание"
       answer:

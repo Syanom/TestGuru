@@ -17,13 +17,13 @@ categories = Category.create!([{ name: 'Backend' }, { name: 'Frontend' }, { name
 
 tests = Test.create!([
                        { title: 'Ruby', level: 2, category: categories[0],
-                         author: users[0], timer: 0 },
+                         author: users[0] },
                        { title: 'HTML', level: 1, category: categories[1],
-                         author: users[0], timer: 80 },
+                         author: users[0], timer_minutes: 3, timer_seconds: 80 },
                        { title: 'CSS', level: 1, category: categories[1],
-                         author: users[0], timer: 3700 },
+                         author: users[0], timer_hours: 1, timer_minutes: 25, timer_seconds: 30 },
                        { title: 'Introduction in Alien programming languages', level: 5,
-                         category: categories[2], author: users[1], timer: 10 }
+                         category: categories[2], author: users[1], timer_seconds: 10 }
                      ])
 
 questions = Question.create!([

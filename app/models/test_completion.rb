@@ -64,6 +64,8 @@ class TestCompletion < ApplicationRecord
   end
 
   def set_timer
-    self.deadline = DateTime.current + test.timer.seconds if test.timer.positive?
+    if test.timer_hours.positive? || test.timer_minutes.positive? || test.timer_seconds.positive?
+      self.deadline = DateTime.current + test.timer_hours.hours + test.timer_minutes.minutes + test.timer_seconds.seconds
+    end
   end
 end
