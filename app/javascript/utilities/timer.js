@@ -1,3 +1,5 @@
+const { formatSchema } = require("webpack/lib/WebpackOptionsValidationError")
+
 var testCompletionTimerId
 
 document.addEventListener('turbolinks:load', function () {
@@ -19,7 +21,7 @@ function createTimer(timer) {
 }
 
 function updateTimer(timeLeft, deadline, testCompletionID) {
-  if (deadline - new Date() <= 0) { window.location.href = '/test_completions/' + testCompletionID + '/result' }
+  if (deadline - new Date() <= 0) { clearInterval(testCompletionTimerId); document.forms["question-form"].submit(); }
   timeLeft.innerHTML = calculateTimeLeft(deadline)
 }
 

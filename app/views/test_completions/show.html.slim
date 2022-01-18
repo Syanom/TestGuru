@@ -11,7 +11,7 @@ p class="mb-0" = t('.current_question', current_question_number: @test_completio
 
 h3 = @test_completion.current_question.body
 
-= form_with url: test_completion_path(@test_completion), local: true, method: :put do |form|
+= form_with url: test_completion_path(@test_completion), id: 'question-form', local: true, method: :put do |form|
   = form.collection_check_boxes :answer_ids,
   @test_completion.current_question.answers, :id, :body, include_hidden: false do |b|
     .form-check
