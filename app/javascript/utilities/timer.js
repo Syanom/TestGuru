@@ -14,14 +14,13 @@ function createTimer(timer) {
     timer.classList.remove('hide')
     const timeLeft = document.querySelector('.time-left')
     const deadline = new Date(timer.dataset.deadline)
-    const testCompletionID = timer.dataset.testCompletionId
-    updateTimer(timeLeft, deadline, testCompletionID)
-    testCompletionTimerId = setInterval(updateTimer, 1000, timeLeft, deadline, testCompletionID)
+    updateTimer(timeLeft, deadline)
+    testCompletionTimerId = setInterval(updateTimer, 1000, timeLeft, deadline)
   }
 }
 
-function updateTimer(timeLeft, deadline, testCompletionID) {
-  if (deadline - new Date() <= 0) { clearInterval(testCompletionTimerId); document.forms["question-form"].submit(); }
+function updateTimer(timeLeft, deadline) {
+  if (deadline - new Date() < 0) { clearInterval(testCompletionTimerId); document.forms["question-form"].submit() }
   timeLeft.innerHTML = calculateTimeLeft(deadline)
 }
 

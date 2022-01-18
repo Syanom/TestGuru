@@ -9,11 +9,7 @@ class TestCompletion < ApplicationRecord
   SUCCESS_RATIO = 85
 
   def accept!(answer_ids)
-    if deadline.nil? && correct_answer?(answer_ids)
-      self.correct_questions += 1
-    elsif correct_answer?(answer_ids) && DateTime.current <= deadline
-      self.correct_questions += 1
-    end
+    self.correct_questions += 1 if !completed? && correct_answer?(answer_ids)
     save!
   end
 
@@ -61,7 +57,7 @@ class TestCompletion < ApplicationRecord
 
   def set_timer
     if test.timer_hours.positive? || test.timer_minutes.positive? || test.timer_seconds.positive?
-      self.deadline = DateTime.current + test.timer_hours.hours + test.timer_minutes.minutes + test.timer_seconds.seconds
+      self.deadline = Time.current.round + test.timer_hours.hours + test.timer_minutes.minutes + test.timer_seconds.seconds
     end
   end
 end
