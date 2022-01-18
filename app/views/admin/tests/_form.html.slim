@@ -19,11 +19,7 @@
   
   div = t('.timer')
   .mb-3
-    = form.number_field :timer_hours, class: 'timer-number-field'
-    |  : 
-    = form.number_field :timer_minutes, class: 'timer-number-field'
-    |  : 
-    = form.number_field :timer_seconds, class: 'timer-number-field'
+    = form.time_field
 
   p
     = form.submit class: "btn btn-primary"

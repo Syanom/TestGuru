@@ -19,11 +19,11 @@ tests = Test.create!([
                        { title: 'Ruby', level: 2, category: categories[0],
                          author: users[0] },
                        { title: 'HTML', level: 1, category: categories[1],
-                         author: users[0], timer_minutes: 3, timer_seconds: 80 },
+                         author: users[0] },
                        { title: 'CSS', level: 1, category: categories[1],
-                         author: users[0], timer_hours: 1, timer_minutes: 25, timer_seconds: 30 },
+                         author: users[0] },
                        { title: 'Introduction in Alien programming languages', level: 5,
-                         category: categories[2], author: users[1], timer_seconds: 10 }
+                         category: categories[2], author: users[1] }
                      ])
 
 questions = Question.create!([
@@ -40,25 +40,6 @@ questions = Question.create!([
                                { body: 'Alien question 2', test: tests[3] },
                                { body: 'Alien question 3', test: tests[3] }
                              ])
-
-TestCompletion.create!([
-                         { user: users[0], test: tests[3],
-                           current_question_id: tests[3].questions.first },
-                         { user: users[1], test: tests[0],
-                           current_question_id: tests[0].questions.first },
-                         { user: users[1], test: tests[1],
-                           current_question_id: tests[1].questions.first },
-                         { user: users[1], test: tests[2],
-                           current_question_id: tests[2].questions.first },
-                         { user: users[2], test: tests[1],
-                           current_question_id: tests[1].questions.first },
-                         { user: users[2], test: tests[2],
-                           current_question_id: tests[2].questions.first },
-                         { user: users[3], test: tests[1],
-                           current_question_id: tests[1].questions.first },
-                         { user: users[3], test: tests[3],
-                           current_question_id: tests[3].questions.first }
-                       ])
 
 Answer.create!([
                  { body: 'Incorrect answer 1 for Ruby question 1', correct: false, question: questions[0] },

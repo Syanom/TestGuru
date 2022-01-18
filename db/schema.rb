@@ -78,9 +78,7 @@ ActiveRecord::Schema.define(version: 2022_01_07_200319) do
     t.bigint "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "timer_hours", default: 0, null: false
-    t.integer "timer_minutes", default: 0, null: false
-    t.integer "timer_seconds", default: 0, null: false
+    t.time "timer"
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
