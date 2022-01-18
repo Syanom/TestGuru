@@ -23,6 +23,7 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        timer: "Timer"
       feedback:
         content: "Content"
       answer:
@@ -112,8 +113,6 @@ en:
         edit_test: "Edit %{title} Test"
       form_inline:
         submit: 'OK'
-      form:
-        timer: "Timer h/m/s. To create test without timer, leave all fields at 0"
       test:
         questions_number: "Number of questions: "
         difficulty: "Difficutcy: "

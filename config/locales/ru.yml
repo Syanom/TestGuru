@@ -30,6 +30,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        timer: "Таймер"
       feedback:
         content: "Содержание"
       answer:
@@ -111,8 +112,6 @@ ru:
         edit_test: "Изменить %{title} Тест"
       form_inline:
         submit: "ОК"
-      form:
-        timer: "Таймер ч/м/с. Для создания теста без таймера, все поля должны быть равны 0"
       test:
         questions_number: "Количество вопросов: "
         difficulty: "Сложность: "

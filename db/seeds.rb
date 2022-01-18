@@ -19,11 +19,11 @@ tests = Test.create!([
                        { title: 'Ruby', level: 2, category: categories[0],
                          author: users[0] },
                        { title: 'HTML', level: 1, category: categories[1],
-                         author: users[0] },
+                         author: users[0], timer: '00:10:00' },
                        { title: 'CSS', level: 1, category: categories[1],
-                         author: users[0] },
+                         author: users[0], timer: '00:00:10' },
                        { title: 'Introduction in Alien programming languages', level: 5,
-                         category: categories[2], author: users[1] }
+                         category: categories[2], author: users[1], timer: '01:00:00' }
                      ])
 
 questions = Question.create!([
