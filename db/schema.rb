@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_27_171310) do
+ActiveRecord::Schema.define(version: 2022_01_07_200319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_12_27_171310) do
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
     t.boolean "correct", null: false
-    t.integer "question_id", null: false
+    t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["body"], name: "index_answers_on_body"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2021_12_27_171310) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.bigint "author_id", null: false
-    t.string "subject"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -42,8 +41,8 @@ ActiveRecord::Schema.define(version: 2021_12_27_171310) do
 
   create_table "gists", force: :cascade do |t|
     t.string "url", null: false
-    t.integer "question_id", null: false
-    t.integer "author_id", null: false
+    t.bigint "question_id", null: false
+    t.bigint "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_id"], name: "index_gists_on_author_id"
@@ -52,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_12_27_171310) do
 
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
-    t.integer "test_id", null: false
+    t.bigint "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["body"], name: "index_questions_on_body"
@@ -60,12 +59,13 @@ ActiveRecord::Schema.define(version: 2021_12_27_171310) do
   end
 
   create_table "test_completions", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "test_id", null: false
-    t.integer "current_question_id"
+    t.bigint "user_id", null: false
+    t.bigint "test_id", null: false
+    t.bigint "current_question_id"
     t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deadline"
     t.index ["current_question_id"], name: "index_test_completions_on_current_question_id"
     t.index ["test_id"], name: "index_test_completions_on_test_id"
     t.index ["user_id"], name: "index_test_completions_on_user_id"
@@ -74,10 +74,11 @@ ActiveRecord::Schema.define(version: 2021_12_27_171310) do
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 0, null: false
-    t.integer "category_id", null: false
-    t.integer "author_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "timer"
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true

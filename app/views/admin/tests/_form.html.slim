@@ -16,6 +16,11 @@
     = form.label :category_id
     br
     = form.collection_select :category_id, Category.all, :id, :name, prompt: true
+  
+  p
+    = form.label :timer
+    br
+    = form.time_field :timer, value: "#{@test.timer.strftime('%H:%M:%S') unless @test.timer.nil?}", step: "2"
 
   p
     = form.submit class: "btn btn-primary"

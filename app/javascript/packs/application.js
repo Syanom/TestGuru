@@ -14,6 +14,7 @@ import '../utilities/progress_bar'
 import '../utilities/dropdown'
 import '../utilities/hide_greetings'
 import '../utilities/items_button_jump'
+import '../utilities/timer'
 
 Rails.start()
 Turbolinks.start()
