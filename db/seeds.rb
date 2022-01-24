@@ -1,8 +1,8 @@
 users = User.create!([
-                       { first_name: 'Vitaly', last_name: 'Kurennov', email: 'ViKur@somemail.com',
+                       { first_name: 'Yan', last_name: 'Dupliy', email: 'yandupliy@gmail.com',
                          confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
                          password: 'Qwer1234', type: 'Admin' },
-                       { first_name: 'Yan', last_name: 'Dupliy', email: 'yandupliy@gmail.com',
+                       { first_name: 'Vitaly', last_name: 'Kurennov', email: 'ViKur@somemail.com',
                          confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
                          password: 'Qwer1234', type: 'Admin' },
                        { first_name: 'Ivan', last_name: 'Ivanov', email: 'IvIv@somemail.com',
