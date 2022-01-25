@@ -1,9 +1,12 @@
 class Badge < ApplicationRecord
   has_one :group, dependent: :destroy, autosave: true
   delegate :tests, :test, :test=, :category, :category=, :level, :level=, to: :built_group
+  validates_presence_of :group
+
   has_one :rule, dependent: :destroy, autosave: true
   delegate :count_badges_to_assign, :completion, :completion=, :completion_time, :completion_time=, :attempts,
            :attempts=, to: :built_rule
+  validates_presence_of :rule
 
   has_many :users, through: :badge_allotments
 
