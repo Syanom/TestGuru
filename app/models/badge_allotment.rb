@@ -1,4 +1,4 @@
 class BadgeAllotment < ApplicationRecord
   belongs_to :user
-  nelongs_to :badge
+  belongs_to :badge
 end

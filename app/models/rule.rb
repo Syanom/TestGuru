@@ -5,28 +5,24 @@ class Rule < ApplicationRecord
   # don't forget to add them in this validation
   validate :one_rule_assigned
 
-  def assign_badge?(user)
-    if !completion.nil?
-      check_completion(user)
-    elsif !completion_time.nil?
-      check_completion_time(user)
-    elsif !attempts.nil?
-      check_attempts(user)
-    else
-      errors.add :base, 'Badge rule is invalid'
-    end
+  def count_badges_to_assign(user)
+    return check_completion(user) unless completion.nil?
+    return check_completion_time(user) unless completion_time.nil?
+    return check_attempts(user) unless attimpts.nil?
   end
 
   private
 
   def check_completion(user)
-    return false if test.test_completions.where(user: user).empty?
-
-    if test.test_completions.where(user: user).any? { |test_completion| test_completion.successful? == true }
-      true
-    else
-      false
+    result = Array.new(badge.tests.length, 0)
+    i = 0
+    badge.tests.each do |test|
+      test.test_completions.where(user: user).each do |test_completion|
+        result[i] += 1 if test_completion.successful?
+      end
+      i += 1
     end
+    result.min
   end
 
   def one_rule_assigned

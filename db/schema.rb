@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_01_23_074057) do
   create_table "badge_allotments", force: :cascade do |t|
     t.bigint "badge_id", null: false
     t.bigint "user_id", null: false
+    t.integer "number_of_badges", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["badge_id"], name: "index_badge_allotments_on_badge_id"
