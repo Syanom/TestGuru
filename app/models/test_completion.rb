@@ -30,6 +30,10 @@ class TestCompletion < ApplicationRecord
     calculate_result > SUCCESS_RATIO
   end
 
+  def completion_time
+    updated_at - created_at
+  end
+
   private
 
   def correct_answer?(answer_ids)

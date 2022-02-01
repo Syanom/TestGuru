@@ -25,6 +25,30 @@ class Rule < ApplicationRecord
     result.min
   end
 
+  def check_completion_time(user)
+    result = Array.new(badge.tests.length, 0)
+    i = 0
+    badge.tests.each do |test|
+      test.test_completions.where(user: user).each do |test_completion|
+        result[i] += 1 if test_completion.successful? && completion_time <= test_completion.completion_time
+      end
+      i += 1
+    end
+    result.min
+  end
+
+  def check_attempts(user)
+    result = 1
+    badge.tests.each do |test|
+      failed_attempts = 0
+      test.test_completions.where(user: user).each do |test_completion|
+        failed_attempts += 1 unless test_completion.successful?
+      end
+      result = 0 if failed_attempts >= attempts
+    end
+    result
+  end
+
   def one_rule_assigned
     available_rules = [attempts, completion_time, completion]
     rules_in_use_counter = 0
