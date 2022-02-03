@@ -91,6 +91,10 @@ en:
     create:
       success: "Gist was successfully created"
       failure: "Gist creation failed"
+  
+  badge_allotments:
+    index:
+      header: "My badges"
 
   admin:
     tests:
