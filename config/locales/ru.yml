@@ -95,6 +95,10 @@ ru:
       success: "Gist успешно сохранен"
       failure: "Не удалось сохранить gist"
 
+  badge_allotments:
+    index:
+      header: "Мои бейджи"
+
   admin:
     tests:
       create:
