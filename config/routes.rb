@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :badges, only: :index
   resources :gists, only: :create
   resources :feedbacks, only: %i[new create]
 
@@ -33,5 +34,6 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges
   end
 end

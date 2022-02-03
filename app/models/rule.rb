@@ -1,14 +1,12 @@
 class Rule < ApplicationRecord
   belongs_to :badge
 
-  # If you add any new fields for rules,
-  # don't forget to add them in this validation
   validate :one_rule_assigned
 
   def count_badges_to_assign(user)
     return check_completion(user) unless completion.nil?
     return check_completion_time(user) unless completion_time.nil?
-    return check_attempts(user) unless attimpts.nil?
+    return check_attempts(user) unless attempts.nil?
   end
 
   private
@@ -27,10 +25,11 @@ class Rule < ApplicationRecord
 
   def check_completion_time(user)
     result = Array.new(badge.tests.length, 0)
+    completion_time_in_sec = completion_time.hour * 3600 + completion_time.min * 60 + completion_time.sec
     i = 0
     badge.tests.each do |test|
       test.test_completions.where(user: user).each do |test_completion|
-        result[i] += 1 if test_completion.successful? && completion_time <= test_completion.completion_time
+        result[i] += 1 if test_completion.successful? && test_completion.completion_time <= completion_time_in_sec
       end
       i += 1
     end
@@ -41,10 +40,13 @@ class Rule < ApplicationRecord
     result = 1
     badge.tests.each do |test|
       failed_attempts = 0
-      test.test_completions.where(user: user).each do |test_completion|
+      successful = false
+      test_completions = test.test_completions.where(user: user)
+      test_completions.each do |test_completion|
         failed_attempts += 1 unless test_completion.successful?
+        successful = true if test_completion.successful?
       end
-      result = 0 if failed_attempts >= attempts
+      result = 0 if failed_attempts >= attempts || test_completions.empty? || !successful
     end
     result
   end
@@ -55,6 +57,6 @@ class Rule < ApplicationRecord
     available_rules.each do |rule|
       rules_in_use_counter += 1 unless rule.nil?
     end
-    errors.add :base, 'One and only one rule must be assigned' if rules_in_use_counter != 1
+    errors.add :base, 'One and only one rule must be assigned.' if rules_in_use_counter != 1
   end
 end

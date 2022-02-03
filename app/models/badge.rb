@@ -21,6 +21,8 @@ class Badge < ApplicationRecord
   end
 
   def update_badge_allotment(number_of_badges, user)
+    return if number_of_badges <= 0
+
     badge_allotment = BadgeAllotment.find_by(user: user, badge: self)
     if badge_allotment.nil?
       badge_allotment = BadgeAllotment.new(user: user, badge: self, number_of_badges: number_of_badges)
@@ -33,8 +35,6 @@ class Badge < ApplicationRecord
 
   private
 
-  # I understand, that next two methods are not DRY,
-  # but I'm not good at metaprogramming
   def built_group
     group || build_group
   end

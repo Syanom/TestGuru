@@ -91,3 +91,13 @@ Answer.create!([
                  { body: 'Incorrect answer 3 for Alien question 3', correct: false, question: questions[11] },
                  { body: 'Correct answer 4 for Alien question 3', correct: true, question: questions[11] }
                ])
+
+Badge.create!([
+                { name: 'First try Ruby', image_url: 'placeholder', test: tests[0], attempts: 1 },
+                { name: 'Frontend in 3 attempts', image_url: 'placeholder', category: categories[1], attempts: 3 },
+                { name: 'Frontend in 30 seconds', image_url: 'placeholder', category: categories[1],
+                  completion_time: '00:00:30' },
+                { name: 'Frontend completed', image_url: 'placeholder', category: categories[1], completion: true },
+                { name: 'Alien programming in hour', image_url: 'placeholder', test: tests[3],
+                  completion_time: '01:00:00' }
+              ])
