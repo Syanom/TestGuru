@@ -36,10 +36,12 @@ ActiveRecord::Schema.define(version: 2022_01_23_074057) do
   end
 
   create_table "badges", force: :cascade do |t|
-    t.string "name"
-    t.string "image_url"
+    t.string "name", null: false
+    t.string "image_url", null: false
+    t.bigint "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_badges_on_author_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -151,6 +153,7 @@ ActiveRecord::Schema.define(version: 2022_01_23_074057) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badges", "users", column: "author_id"
   add_foreign_key "feedbacks", "users", column: "author_id"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users", column: "author_id"

@@ -1,6 +1,7 @@
 class Badge < ApplicationRecord
   has_one :group, dependent: :destroy, autosave: true
-  delegate :tests, :test, :test=, :category, :category=, :level, :level=, to: :built_group
+  delegate :tests, :test, :test=, :test_id, :test_id=, :category, :category=, :category_id, :category_id=, :level,
+           :level=, to: :built_group
   validates_presence_of :group
 
   has_one :rule, dependent: :destroy, autosave: true
@@ -9,6 +10,7 @@ class Badge < ApplicationRecord
   validates_presence_of :rule
 
   has_many :users, through: :badge_allotments
+  belongs_to :author, class_name: 'User'
 
   def self.assign_badges(test_completion)
     Badge.badges_with_test(test_completion.test).each do |badge|

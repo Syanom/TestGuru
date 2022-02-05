@@ -93,11 +93,13 @@ Answer.create!([
                ])
 
 Badge.create!([
-                { name: 'First try Ruby', image_url: 'image', test: tests[0], attempts: 1 },
-                { name: 'Frontend in 3 attempts', image_url: 'image', category: categories[1], attempts: 3 },
-                { name: 'Frontend in 30 seconds', image_url: 'image', category: categories[1],
+                { name: 'First try Ruby', image_url: 'image', author: users[0], test: tests[0], attempts: 1 },
+                { name: 'Frontend in 3 attempts', image_url: 'image', author: users[0], category: categories[1],
+                  attempts: 3 },
+                { name: 'Frontend in 30 seconds', image_url: 'image', author: users[0], category: categories[1],
                   completion_time: '00:00:30' },
-                { name: 'Frontend completed', image_url: 'image', category: categories[1], completion: true },
-                { name: 'Alien programming in hour', image_url: 'image', test: tests[3],
+                { name: 'Frontend completed', image_url: 'image', author: users[0], category: categories[1],
+                  completion: true },
+                { name: 'Alien programming in hour', image_url: 'image', author: users[0], test: tests[3],
                   completion_time: '01:00:00' }
               ])

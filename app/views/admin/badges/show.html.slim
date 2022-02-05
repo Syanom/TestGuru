@@ -1,0 +1,28 @@
+.mx-1
+  h1 = @badge.name
+
+  - unless @badge.category.nil?
+    p = @badge.category.name
+
+  - unless @badge.test.nil?
+    p = @badge.test.title
+  
+  - unless @badge.level.nil?
+    p = @badge.level
+
+  - unless @badge.attempts.nil?
+    p = @badge.attempts
+
+  - unless @badge.completion.nil? || @badge.completion == false
+    p = @badge.completion
+
+  - unless @badge.completion_time.nil?
+    p = @badge.completion_time.strftime('%H:%M:%S')
+
+.mx-1
+  = link_to t('actions.edit'), edit_admin_badge_path
+  |  | 
+  = link_to t('actions.delete'), admin_badge_path,
+            method: :delete, data: { confirm: t('actions.sure?') }
+  br
+  = link_to t('actions.back'), admin_badges_path

@@ -1,0 +1,45 @@
+= form_with model: [:admin, @badge], local: true do |form|
+
+  = render 'shared/errors', resource: @badge
+
+  p
+    = form.label :name
+    br
+    = form.text_field :name
+
+  p
+    = form.label :image_url
+    br
+    = form.text_field :image_url
+
+  p
+    = form.label :level
+    br
+    = form.number_field :level
+
+  p
+    = form.label :category_id
+    br
+    = form.collection_select :category_id, Category.all, :id, :name, prompt: true
+
+  p
+    = form.label :test_id
+    br
+    = form.collection_select :test_id, Test.all, :id, :title, prompt: true
+
+  p
+    = form.label :attempts
+    br
+    = form.number_field :attempts
+
+  p
+    = form.label :completion
+    br
+    = form.check_box :completion, id: :badge_completion
+  p
+    = form.label :completion_time
+    br
+    = form.time_field :completion_time, value: "#{@badge.completion_time.strftime('%H:%M:%S') unless @badge.completion_time.nil?}", step: "2"
+
+  p
+    = form.submit class: "btn btn-primary"

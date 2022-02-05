@@ -1,4 +1,4 @@
-class BadgesController < Admin::BaseController
+class Admin::BadgesController < Admin::BaseController
   before_action :find_badge, only: %i[show edit update destroy]
 
   def index
@@ -11,10 +11,31 @@ class BadgesController < Admin::BaseController
     @badge = Badge.new
   end
 
-  def create; end
+  def create
+    @badge = current_user.authored_badges.build(badge_params)
+
+    if @badge.save
+      redirect_to admin_badge_path(@badge), notice: t('.success')
+    else
+      render :new
+    end
+  end
+
   def edit; end
-  def update; end
-  def destroy; end
+
+  def update
+    if @badge.update(badge_params)
+      redirect_to admin_badge_path(@badge)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @badge.destroy
+
+    redirect_to admin_badges_path
+  end
 
   private
 
@@ -23,6 +44,7 @@ class BadgesController < Admin::BaseController
   end
 
   def badge_params
-    params.require(:badge).permit(:name, :image_url, :test, :category, :attempts, :completion_time, :completion)
+    params.require(:badge).permit(:name, :image_url, :test_id, :category_id, :level, :attempts, :completion_time,
+                                  :completion)
   end
 end

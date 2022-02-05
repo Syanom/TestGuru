@@ -55,8 +55,11 @@ class Rule < ApplicationRecord
     available_rules = [attempts, completion_time, completion]
     rules_in_use_counter = 0
     available_rules.each do |rule|
-      rules_in_use_counter += 1 unless rule.nil?
+      rules_in_use_counter += 1 unless rule.nil? || rule == false
     end
-    errors.add :base, 'One and only one rule must be assigned.' if rules_in_use_counter != 1
+    if rules_in_use_counter != 1
+      errors.add :base,
+                 "One and only one rule must be assigned. Attempts: #{attempts}, completion_time: #{completion_time}, completion #{completion}"
+    end
   end
 end
