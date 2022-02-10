@@ -1,36 +1,39 @@
 .mx-1
-  h1 = @badge.name
+  h1
+    img src="#{@badge.image_url}" width="45" height="45"
+    = @badge.name
 
-  - unless @badge.category.nil?
-      div 
-        = t('admin.badges.badge.category')
-        = @badge.category.name
+  .mx-2
+    - unless @badge.category.nil?
+        div 
+          = t('admin.badges.badge.category')
+          = @badge.category.name
 
-  - unless @badge.test.nil?
-      div 
-        = t('admin.badges.badge.test')
-        = @badge.test.title
+    - unless @badge.test.nil?
+        div 
+          = t('admin.badges.badge.test')
+          = @badge.test.title
     
-  - unless @badge.level.nil?
-      = t('admin.badges.badge.level')
-      div = @badge.level
+    - unless @badge.level.nil?
+        = t('admin.badges.badge.level')
+        div = @badge.level
 
-  - unless @badge.attempts.nil?
-      div
-        = t('admin.badges.badge.attempts')
-        = @badge.attempts
+    - unless @badge.attempts.nil?
+        div
+          = t('admin.badges.badge.attempts')
+          = @badge.attempts
 
-  - unless @badge.completion.nil? || @badge.completion == false
-      div
-        = t('admin.badges.badge.completion')
-        = @badge.completion
+    - unless @badge.completion.nil? || @badge.completion == false
+        div
+          = t('admin.badges.badge.completion')
+          = @badge.completion
 
-  - unless @badge.completion_time.nil?
-      div
-        = t('admin.badges.badge.completion_time')
-        = @badge.completion_time.strftime('%H:%M:%S')
+    - unless @badge.completion_time.nil?
+        div
+          = t('admin.badges.badge.completion_time')
+          = @badge.completion_time.strftime('%H:%M:%S')
 
-.mx-1
+.mx-2
   = link_to t('actions.edit'), edit_admin_badge_path
   |  | 
   = link_to t('actions.delete'), admin_badge_path,
