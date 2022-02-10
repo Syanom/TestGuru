@@ -161,6 +161,18 @@ ru:
         url: "Gist hash"
         user: "Email пользователя"
 
+    badges:
+      index:
+        header: "Бейджи"
+
+      badge:
+        category: "Категория: "
+        test: "Тест: "
+        level: "Уровень тестов: "
+        attempts: "Количество попыток: "
+        completion: "Завершен: "
+        completion_time: "Время выполнения: "
+
   tests_mailer:
     completed_test:
       subject: "Вы прошли TestGuru тест!"

@@ -162,6 +162,18 @@ en:
         url: "Gist hash"
         user: "User email"
 
+    badges:
+      index:
+        header: "Badges"
+
+      badge:
+        category: "Category: "
+        test: "Test: "
+        level: "Tests level: "
+        attempts: "Attempts number: "
+        completion: "Completion: "
+        completion_time: "Completion time: "
+
   tests_mailer:
     completed_test:
       subject: "You just completed TestGuru test!"

@@ -1,0 +1,33 @@
+.item.border.mx-2.my-3.p-2.d-flex.justify-content-between.align-items-center
+  div  
+    div
+      strong = badge.name
+
+    - unless badge.category.nil?
+      div 
+        = t('.category')
+        = badge.category.name
+
+    - unless badge.test.nil?
+      div 
+        = t('.test')
+        = badge.test.title
+    
+    - unless badge.level.nil?
+      = t('level')
+      div = badge.level
+
+    - unless badge.attempts.nil?
+      div
+        = t('.attempts')
+        = badge.attempts
+
+    - unless badge.completion.nil? || badge.completion == false
+      div
+        = t('.completion')
+        = badge.completion
+
+    - unless badge.completion_time.nil?
+      div
+        = t('.completion_time')
+        = badge.completion_time.strftime('%H:%M:%S')

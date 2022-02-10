@@ -1,0 +1,8 @@
+.mx-2
+  h1 = t('.header')
+
+.items
+  div class="new-item border mx-2 my-3 p-2 d-flex align-items-center justify-content-center pointer" onclick="location.href='new';"
+    = link_to (octicon 'plus'), new_admin_badge_path
+  
+  = render @badges
