@@ -93,13 +93,15 @@ Answer.create!([
                ])
 
 Badge.create!([
-                { name: 'First try Ruby', image_url: 'image', author: users[0], test: tests[0], attempts: 1 },
-                { name: 'Frontend in 3 attempts', image_url: 'image', author: users[0], category: categories[1],
-                  attempts: 3 },
-                { name: 'Frontend in 30 seconds', image_url: 'image', author: users[0], category: categories[1],
-                  completion_time: '00:00:30' },
-                { name: 'Frontend completed', image_url: 'image', author: users[0], category: categories[1],
-                  completion: true },
-                { name: 'Alien programming in hour', image_url: 'image', author: users[0], test: tests[3],
-                  completion_time: '01:00:00' }
+                { name: 'First try Ruby',
+                  image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
+                  author: users[0], test: tests[0], attempts: 1 },
+                { name: 'Frontend in 3 attempts', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
+                  author: users[0], category: categories[1], attempts: 3 },
+                { name: 'Frontend in 30 seconds', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
+                  author: users[0], category: categories[1], completion_time: '00:00:30' },
+                { name: 'Frontend completed', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
+                  author: users[0], category: categories[1], completion: true },
+                { name: 'Alien programming in hour', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
+                  author: users[0], test: tests[3], completion_time: '01:00:00' }
               ])
