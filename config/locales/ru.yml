@@ -104,6 +104,7 @@ ru:
       create:
         success: "Тест создан"
       index:
+        manage_badges: "Редактировать Бейджи"
         header: "Доступные тесты"
         title: "Сортировать по названию"
         new_test: "Создать тест"

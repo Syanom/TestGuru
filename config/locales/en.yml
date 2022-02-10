@@ -101,6 +101,7 @@ en:
       create:
         success: "Test was successfully created"
       index:
+        manage_badges: "Manage Badges"
         header: "Tests available"
         title: "Title"
         level: "Level"
@@ -165,7 +166,6 @@ en:
     badges:
       index:
         header: "Badges"
-
       badge:
         category: "Category: "
         test: "Test: "
