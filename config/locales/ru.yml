@@ -31,6 +31,15 @@ ru:
         level: "Уровень"
         category_id: "Категория"
         timer: "Таймер"
+      badge:
+        name: "Название"
+        image_url: "URL картинки"
+        level: "Уровень"
+        category_id: "Категория"
+        test_id: "Тест"
+        attempts: "Количество Попыток"
+        completion: "Выполнен"
+        completion_time: "Время Выполнения"
       feedback:
         content: "Содержание"
       answer:
@@ -165,7 +174,6 @@ ru:
     badges:
       index:
         header: "Бейджи"
-
       badge:
         category: "Категория: "
         test: "Тест: "
@@ -173,6 +181,9 @@ ru:
         attempts: "Количество попыток: "
         completion: "Завершен: "
         completion_time: "Время выполнения: "
+      for_helper:
+        create_new_badge: "Создать новый Бейдж"
+        edit_badge: "Изменить %{name} Бейдж"
 
   tests_mailer:
     completed_test:

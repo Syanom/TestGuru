@@ -24,6 +24,15 @@ en:
         level: "Level"
         category_id: "Category"
         timer: "Timer"
+      badge:
+        name: "Name"
+        image_url: "Image URL"
+        level: "Level"
+        category_id: "Category"
+        test_id: "Test"
+        attempts: "Number of Attempts"
+        completion: "Completion"
+        completion_time: "Completion Time"
       feedback:
         content: "Content"
       answer:
@@ -173,6 +182,9 @@ en:
         attempts: "Attempts number: "
         completion: "Completion: "
         completion_time: "Completion time: "
+      for_helper:
+        create_new_badge: "Create new Badge"
+        edit_badge: "Edit %{name} Badge"
 
   tests_mailer:
     completed_test:
