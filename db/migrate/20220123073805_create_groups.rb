@@ -2,9 +2,8 @@ class CreateGroups < ActiveRecord::Migration[6.1]
   def change
     create_table :groups do |t|
       t.references :badge, null: false
-      t.references :test
-      t.references :category
-      t.integer :level
+      t.string :group_type, presence: true
+      t.string :group_value, presence: true
 
       t.timestamps
     end

@@ -95,13 +95,18 @@ Answer.create!([
 Badge.create!([
                 { name: 'First try Ruby',
                   image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], test: tests[0], attempts: 1 },
+                  author: users[0], group_type: 'test', group_value: tests[0].title,
+                  rule_type: 'attempts', rule_value: '1' },
                 { name: 'Frontend in 3 attempts', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], category: categories[1], attempts: 3 },
+                  author: users[0], group_type: 'category', group_value: categories[1].name,
+                  rule_type: 'attempts', rule_value: '3' },
                 { name: 'Frontend in 30 seconds', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], category: categories[1], completion_time: '00:00:30' },
+                  author: users[0], group_type: 'category', group_value: categories[1].name,
+                  rule_type: 'completion_time', rule_value: '00:00:30' },
                 { name: 'Frontend completed', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], category: categories[1], completion: true },
+                  author: users[0], group_type: 'category', group_value: categories[1].name,
+                  rule_type: 'completion', rule_value: 'true' },
                 { name: 'Alien programming in hour', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], test: tests[3], completion_time: '01:00:00' }
+                  author: users[0], group_type: 'test', group_value: tests[3],
+                  rule_type: 'completion_time', rule_value: '01:00:00' }
               ])

@@ -1,25 +1,26 @@
 class Badge < ApplicationRecord
-  has_one :group, dependent: :destroy, autosave: true
-  delegate :tests, :test, :test=, :test_id, :test_id=, :category, :category=, :category_id, :category_id=, :level,
-           :level=, to: :built_group
-  validates_presence_of :group
-
-  has_one :rule, dependent: :destroy, autosave: true
-  delegate :count_badges_to_assign, :completion, :completion=, :completion_time, :completion_time=, :attempts,
-           :attempts=, to: :built_rule
-  validates_presence_of :rule
-
-  has_many :users, through: :badge_allotments
   belongs_to :author, class_name: 'User'
 
+  has_one :group, dependent: :destroy, autosave: true
+  has_one :rule, dependent: :destroy, autosave: true
+  has_many :users, through: :badge_allotments
+
+  validates :group, presence: true
+  validates :rule, presence: true
+
+  delegate :group_type, :group_type=, :group_value, :group_value=, :tests, to: :built_group
+  delegate :rule_type, :rule_type=, :rule_value, :rule_value=, to: :built_rule
+
+  scope :badges_with_test, ->(test) { tests.include?(test) }
+
   def self.assign_badges(test_completion)
-    Badge.badges_with_test(test_completion.test).each do |badge|
+    badges_with_test(test_completion.test).each do |badge|
       badge.update_badge_allotment(badge.count_badges_to_assign(test_completion.user), test_completion.user)
     end
   end
 
-  def self.badges_with_test(test)
-    Badge.all.select { |badge| badge.tests.include?(test) }
+  def self.badges_with_test_method(test)
+    all.select { |badge| badge.tests.include?(test) }
   end
 
   def update_badge_allotment(number_of_badges, user)
