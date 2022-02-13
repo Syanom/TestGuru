@@ -1,8 +1,6 @@
 class Rule < ApplicationRecord
   belongs_to :badge
 
-  validate :one_rule_assigned
-
   def count_badges_to_assign(user)
     return check_completion(user) unless completion.nil?
     return check_completion_time(user) unless completion_time.nil?
@@ -49,17 +47,5 @@ class Rule < ApplicationRecord
       result = 0 if failed_attempts >= attempts || test_completions.empty? || !successful
     end
     result
-  end
-
-  def one_rule_assigned
-    available_rules = [attempts, completion_time, completion]
-    rules_in_use_counter = 0
-    available_rules.each do |rule|
-      rules_in_use_counter += 1 unless rule.nil? || rule == false
-    end
-    if rules_in_use_counter != 1
-      errors.add :base,
-                 "One and only one rule must be assigned. Attempts: #{attempts}, completion_time: #{completion_time}, completion #{completion}"
-    end
   end
 end
