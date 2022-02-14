@@ -13,7 +13,7 @@ class Badge < ApplicationRecord
   delegate :type, :type=, :value, :value=, to: :carefuly_built_group, prefix: :group
   delegate :tests, to: :carefuly_built_group
   delegate :type, :type=, :value, :value=, to: :carefuly_built_rule, prefix: :rule
-  delegate :count_badges_to_assign, to: :built_rule
+  delegate :count_badges_to_assign, to: :carefuly_built_rule
 
   scope :badges_with_test, ->(test) { select { |badge| badge.tests.include?(test) } }
 
