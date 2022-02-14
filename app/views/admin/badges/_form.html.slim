@@ -3,9 +3,19 @@
   = render 'shared/errors', resource: @badge
 
   p
+    = form.label :name
+    br
+    = form.text_field :name
+
+  p
+    = form.label :image_url
+    br
+    = form.text_field :image_url
+
+  p
     = form.label :group_type
     br
-    = form.text_field :group_type
+    = form.select 'group_type', Group::GROUP_TYPES, {:include_blank => "Select"}
   
   p
     = form.label :group_value
@@ -15,7 +25,7 @@
   p
     = form.label :rule_type
     br
-    = form.text_field :rule_type
+    = form.select 'rule_type', Rule::RULE_TYPES, {:include_blank => "Select"}
 
   p
     = form.label :rule_value
