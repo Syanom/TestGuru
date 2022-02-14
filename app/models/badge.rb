@@ -10,9 +10,9 @@ class Badge < ApplicationRecord
   validates_associated :group
   validates_associated :rule
 
-  delegate :type, :type=, :value, :value=, to: :built_group, prefix: :group
-  delegate :tests, to: :built_group
-  delegate :type, :type=, :value, :value=, to: :built_rule, prefix: :rule
+  delegate :type, :type=, :value, :value=, to: :carefuly_built_group, prefix: :group
+  delegate :tests, to: :carefuly_built_group
+  delegate :type, :type=, :value, :value=, to: :carefuly_built_rule, prefix: :rule
   delegate :count_badges_to_assign, to: :built_rule
 
   scope :badges_with_test, ->(test) { select { |badge| badge.tests.include?(test) } }
@@ -38,11 +38,11 @@ class Badge < ApplicationRecord
 
   private
 
-  def built_group
+  def carefuly_built_group
     group || build_group
   end
 
-  def built_rule
+  def carefuly_built_rule
     rule || build_rule
   end
 end
