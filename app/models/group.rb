@@ -1,9 +1,12 @@
 class Group < ApplicationRecord
   belongs_to :badge
 
+  alias group_type type
+  alias group_value value
+
   def tests
-    return Test.where(title: group_value) if group_type == 'test'
-    return Test.where(category: Category.find_by(name: group_value)) if group_type == 'category'
-    return Test.where(level: group_value.to_i) if group_type == 'level'
+    return Test.where(title: value) if type == 'test'
+    return Test.where(category: Category.find_by(name: value)) if type == 'category'
+    return Test.where(level: value.to_i) if type == 'level'
   end
 end
