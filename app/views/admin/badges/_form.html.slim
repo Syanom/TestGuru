@@ -3,43 +3,24 @@
   = render 'shared/errors', resource: @badge
 
   p
-    = form.label :name
+    = form.label :group_type
     br
-    = form.text_field :name
+    = form.text_field :group_type
+  
+  p
+    = form.label :group_value
+    br
+    = form.text_field :group_value
 
   p
-    = form.label :image_url
+    = form.label :rule_type
     br
-    = form.text_field :image_url
+    = form.text_field :rule_type
 
   p
-    = form.label :level
+    = form.label :rule_value
     br
-    = form.number_field :level
-
-  p
-    = form.label :category_id
-    br
-    = form.collection_select :category_id, Category.all, :id, :name, prompt: true
-
-  p
-    = form.label :test_id
-    br
-    = form.collection_select :test_id, Test.all, :id, :title, prompt: true
-
-  p
-    = form.label :attempts
-    br
-    = form.number_field :attempts
-
-  p
-    = form.label :completion
-    br
-    = form.check_box :completion, id: :badge_completion
-  p
-    = form.label :completion_time
-    br
-    = form.time_field :completion_time, value: "#{@badge.completion_time.strftime('%H:%M:%S') unless @badge.completion_time.nil?}", step: "2"
+    = form.text_field :rule_value
 
   p
     = form.submit class: "btn btn-primary"
