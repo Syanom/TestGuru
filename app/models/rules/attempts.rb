@@ -9,7 +9,7 @@ class Attempts < Rule
         failed_attempts += 1 unless test_completion.successful?
         successful = true if test_completion.successful?
       end
-      result = 0 if failed_attempts >= attempts || test_completions.empty? || !successful
+      result = 0 if failed_attempts >= value.to_i || test_completions.empty? || !successful
     end
     result
   end

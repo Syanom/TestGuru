@@ -1,6 +1,7 @@
 class CompletionTime < Rule
   def count_badges_to_assign(user)
     result = Array.new(badge.tests.length, 0)
+    completion_time = rule_value.to_time
     completion_time_in_sec = completion_time.hour * 3600 + completion_time.min * 60 + completion_time.sec
     i = 0
     badge.tests.each do |test|
