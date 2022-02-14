@@ -16,14 +16,14 @@ users = User.create!([
 categories = Category.create!([{ name: 'Backend' }, { name: 'Frontend' }, { name: 'Fullstack' }])
 
 tests = Test.create!([
-                       { title: 'Ruby', level: 2, Category: categories[0],
+                       { title: 'Ruby', level: 2, category: categories[0],
                          author: users[0] },
-                       { title: 'HTML', level: 1, Category: categories[1],
+                       { title: 'HTML', level: 1, category: categories[1],
                          author: users[0], timer: '00:10:00' },
-                       { title: 'CSS', level: 1, Category: categories[1],
+                       { title: 'CSS', level: 1, category: categories[1],
                          author: users[0], timer: '00:00:10' },
                        { title: 'Introduction in Alien programming languages', level: 5,
-                         Category: categories[2], author: users[1], timer: '01:00:00' }
+                         category: categories[2], author: users[1], timer: '01:00:00' }
                      ])
 
 questions = Question.create!([
