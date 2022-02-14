@@ -19,10 +19,6 @@ class Badge < ApplicationRecord
     end
   end
 
-  def self.badges_with_test_method(test)
-    all.select { |badge| badge.tests.include?(test) }
-  end
-
   def update_badge_allotment(number_of_badges, user)
     return if number_of_badges <= 0
 
