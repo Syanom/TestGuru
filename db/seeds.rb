@@ -107,6 +107,6 @@ Badge.create!([
                   author: users[0], group_type: 'category', group_value: categories[1].name,
                   rule_type: 'completion', rule_value: 'true' },
                 { name: 'Alien programming in hour', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], group_type: 'test', group_value: tests[3],
+                  author: users[0], group_type: 'test', group_value: tests[3].title,
                   rule_type: 'completion_time', rule_value: '01:00:00' }
               ])

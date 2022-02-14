@@ -11,7 +11,7 @@ class Badge < ApplicationRecord
   delegate :group_type, :group_type=, :group_value, :group_value=, :tests, to: :built_group
   delegate :rule_type, :rule_type=, :rule_value, :rule_value=, to: :built_rule
 
-  scope :badges_with_test, ->(test) { tests.include?(test) }
+  scope :badges_with_test, ->(test) { select { |badge| badge.tests.include?(test) } }
 
   def self.assign_badges(test_completion)
     badges_with_test(test_completion.test).each do |badge|
