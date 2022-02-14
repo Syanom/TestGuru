@@ -5,34 +5,35 @@
       strong = badge.name
 
     .mx-2
-      - unless badge.category.nil?
+      - if badge.group_type == "AllTestsWithCategory"
         div 
           = t('.category')
-          = badge.category.name
+          = badge.group_value
 
-      - unless badge.test.nil?
+      - if badge.group_type == "SingleTest"
         div 
           = t('.test')
-          = badge.test.title
+          = badge.group_value
     
-      - unless badge.level.nil?
-        = t('.level')
-        div = badge.level
+      - if badge.group_type == "AllTestsWithLevel"
+        div
+          = t('.level')
+          = badge.group_value
 
-      - unless badge.attempts.nil?
+      - if badge.rule_type == "Attempts"
         div
           = t('.attempts')
-          = badge.attempts
+          = badge.rule_value
 
-      - unless badge.completion.nil? || badge.completion == false
+      - if badge.rule_type == "Completion"
         div
           = t('.completion')
-          = badge.completion
+          = badge.rule_value
 
-      - unless badge.completion_time.nil?
+      - if badge.rule_type == "CompletionTime"
         div
           = t('.completion_time')
-          = badge.completion_time.strftime('%H:%M:%S')
+          = badge.rule_value
   
   div class="me-1"   
     div = link_to t('actions.show'), admin_badge_path(badge)
