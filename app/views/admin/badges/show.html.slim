@@ -4,34 +4,42 @@
     = @badge.name
 
   .mx-2
-    - unless @badge.category.nil?
+    .mx-2
+      - if @badge.group_type == "AllTestsWithCategory"
         div 
-          = t('admin.badges.badge.category')
-          = @badge.category.name
+          = t('.category')
+          | : 
+          = @badge.group_value
 
-    - unless @badge.test.nil?
+      - if @badge.group_type == "SingleTest"
         div 
-          = t('admin.badges.badge.test')
-          = @badge.test.title
+          = t('.test')
+          | : 
+          = @badge.group_value
     
-    - unless @badge.level.nil?
-        = t('admin.badges.badge.level')
-        div = @badge.level
-
-    - unless @badge.attempts.nil?
+      - if @badge.group_type == "AllTestsWithLevel"
         div
-          = t('admin.badges.badge.attempts')
-          = @badge.attempts
+          = t('.level')
+          | : 
+          = @badge.group_value
 
-    - unless @badge.completion.nil? || @badge.completion == false
+      - if @badge.rule_type == "Attempts"
         div
-          = t('admin.badges.badge.completion')
-          = @badge.completion
+          = t('.attempts')
+          | : 
+          = @badge.rule_value
 
-    - unless @badge.completion_time.nil?
+      - if @badge.rule_type == "Completion"
         div
-          = t('admin.badges.badge.completion_time')
-          = @badge.completion_time.strftime('%H:%M:%S')
+          = t('.completion')
+          | : 
+          = @badge.rule_value
+
+      - if @badge.rule_type == "CompletionTime"
+        div
+          = t('.completion_time')
+          | : 
+          = @badge.rule_value
 
 .mx-2
   = link_to t('actions.edit'), edit_admin_badge_path
