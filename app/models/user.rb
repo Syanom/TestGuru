@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :authored_feedbacks, class_name: 'Feedback', foreign_key: 'author_id', dependent: :destroy
   has_many :test_completions, dependent: :destroy
   has_many :tests, through: :test_completions, source: :test
+  has_many :badges, through: :badge_allotments
 
   def tests_by_level(level)
     completed_tests.level(level)
