@@ -1,15 +1,15 @@
 class Badge < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
-  has_one :group, dependent: :destroy, autosave: true
-  has_one :rule, dependent: :destroy, autosave: true
+  has_one :group, autosave: true
+  has_one :rule, autosave: true
   has_many :users, through: :badge_allotments
 
   validates :group, presence: true
   validates :rule, presence: true
 
   delegate :type, :type=, :value, :value=, to: :built_group, prefix: :group
-  delegate :tests, to: :build_group
+  delegate :tests, to: :built_group
   delegate :type, :type=, :value, :value=, to: :built_rule, prefix: :rule
   delegate :count_badges_to_assign, to: :built_rule
 
