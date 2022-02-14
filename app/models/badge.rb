@@ -7,6 +7,8 @@ class Badge < ApplicationRecord
 
   validates :group, presence: true
   validates :rule, presence: true
+  validates_associated :group
+  validates_associated :rule
 
   delegate :type, :type=, :value, :value=, to: :built_group, prefix: :group
   delegate :tests, to: :built_group
