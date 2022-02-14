@@ -8,8 +8,9 @@ class Badge < ApplicationRecord
   validates :group, presence: true
   validates :rule, presence: true
 
-  delegate :group_type, :group_type=, :group_value, :group_value=, :tests, to: :built_group
-  delegate :rule_type, :rule_type=, :rule_value, :rule_value=, to: :built_rule
+  delegate :type, :type=, :value, :value=, to: :built_group, prefix: :group
+  delegate :tests, to: :build_group
+  delegate :type, :type=, :value, :value=, to: :built_rule, prefix: :rule
 
   scope :badges_with_test, ->(test) { select { |badge| badge.tests.include?(test) } }
 

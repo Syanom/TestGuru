@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(version: 2022_01_23_074057) do
 
   create_table "groups", force: :cascade do |t|
     t.bigint "badge_id", null: false
-    t.string "group_type"
-    t.string "group_value"
+    t.string "type"
+    t.string "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["badge_id"], name: "index_groups_on_badge_id"
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 2022_01_23_074057) do
 
   create_table "rules", force: :cascade do |t|
     t.bigint "badge_id", null: false
-    t.string "rule_type"
-    t.string "rule_value"
+    t.string "type"
+    t.string "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["badge_id"], name: "index_rules_on_badge_id"
