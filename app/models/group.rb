@@ -5,7 +5,7 @@ class Group < ApplicationRecord
 
   GROUP_TYPES = %w[SingleTest AllTestsWithCategory AllTestsWithLevel].freeze
 
-  validates :type, inclusion: { in: GROUP_TYPES, message: '%{type} is not a valid type' }
+  validates :type, inclusion: { in: GROUP_TYPES, message: 'Group type is not a valid type' }
 
   def tests; end
 end

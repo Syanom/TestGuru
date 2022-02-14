@@ -5,7 +5,7 @@ class Rule < ApplicationRecord
 
   RULE_TYPES = %w[Attempts CompletionTime Completion]
 
-  validates :type, inclusion: { in: RULE_TYPES, message: '%{type} is not a valid type' }
+  validates :type, inclusion: { in: RULE_TYPES, message: 'Rule type is not a valid type' }
 
   def count_badges_to_assign(user); end
 end
