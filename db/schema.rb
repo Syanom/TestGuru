@@ -39,6 +39,10 @@ ActiveRecord::Schema.define(version: 2022_01_23_074057) do
     t.string "name", null: false
     t.string "image_url", null: false
     t.bigint "author_id", null: false
+    t.string "group_type", null: false
+    t.string "group_value", null: false
+    t.string "rule_type", null: false
+    t.string "rule_value", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_id"], name: "index_badges_on_author_id"
@@ -68,15 +72,6 @@ ActiveRecord::Schema.define(version: 2022_01_23_074057) do
     t.index ["question_id"], name: "index_gists_on_question_id"
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.bigint "badge_id", null: false
-    t.string "type"
-    t.string "value"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["badge_id"], name: "index_groups_on_badge_id"
-  end
-
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
     t.bigint "test_id", null: false
@@ -84,15 +79,6 @@ ActiveRecord::Schema.define(version: 2022_01_23_074057) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["body"], name: "index_questions_on_body"
     t.index ["test_id"], name: "index_questions_on_test_id"
-  end
-
-  create_table "rules", force: :cascade do |t|
-    t.bigint "badge_id", null: false
-    t.string "type"
-    t.string "value"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["badge_id"], name: "index_rules_on_badge_id"
   end
 
   create_table "test_completions", force: :cascade do |t|
