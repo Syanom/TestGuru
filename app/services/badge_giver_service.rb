@@ -15,8 +15,7 @@ class BadgeGiverService
   private
 
   def assign_badges(user, badge, quantity)
-    badge_allotment = BadgeAllotment.find_by(user: user, badge: badge)
-    badge_allotment ||= BadgeAllotment.new(user: user, badge: badge)
+    badge_allotment = user.badge_allotments.find_or_initialize_by(badge: badge)
 
     return if quantity <= 0 || badge_allotment.number_of_badges > quantity
 
