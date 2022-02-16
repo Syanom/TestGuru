@@ -1,5 +1,5 @@
 class BadgesController < ApplicationController
   def index
-    @unearned_badges = Badge.all - Badge.select { |badge| badge.users.include?(current_user) }
+    @unearned_badges = Badge.all - current_user.badges
   end
 end
