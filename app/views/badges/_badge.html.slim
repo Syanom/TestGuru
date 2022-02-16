@@ -33,3 +33,9 @@
         div
           = t('admin.badges.badge.completion_time')
           = badge.rule_value
+  div
+    | x
+    - unless badge.badge_allotments.find_by(user: current_user).nil?
+      = badge.badge_allotments.find_by(user: current_user).number_of_badges
+    - else
+      | 0

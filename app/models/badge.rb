@@ -1,10 +1,11 @@
 class Badge < ApplicationRecord
-  belongs_to :author, class_name: 'User'
-
-  has_many :users, through: :badge_allotments
-
   GROUP_TYPES = %w[SingleTest AllTestsWithCategory AllTestsWithLevel].freeze
   RULE_TYPES = %w[Attempts CompletionTime Completion].freeze
+
+  belongs_to :author, class_name: 'User'
+
+  has_many :badge_allotments
+  has_many :users, through: :badge_allotments
 
   validates :group_type, inclusion: { in: GROUP_TYPES, message: 'Group type is not a valid type' }
   validates :rule_type, inclusion: { in: RULE_TYPES, message: 'Rule type is not a valid type' }
