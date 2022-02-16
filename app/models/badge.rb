@@ -1,14 +1,11 @@
 class Badge < ApplicationRecord
-  GROUP_TYPES = %w[SingleTest AllTestsWithCategory AllTestsWithLevel].freeze
-  RULE_TYPES = %w[Attempts CompletionTime Completion].freeze
+  enum group_type: %i[SingleTest AllTestsWithCategory AllTestsWithLevel]
+  enum rule_type: %i[Attempts CompletionTime Completion]
 
   belongs_to :author, class_name: 'User'
 
   has_many :badge_allotments
   has_many :users, through: :badge_allotments
-
-  validates :group_type, inclusion: { in: GROUP_TYPES, message: 'Group type is not a valid type' }
-  validates :rule_type, inclusion: { in: RULE_TYPES, message: 'Rule type is not a valid type' }
 
   scope :badges_with_test, ->(test) { select { |badge| badge.tests.include?(test) } }
 

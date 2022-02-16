@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 2022_01_23_074057) do
     t.string "name", null: false
     t.string "image_url", null: false
     t.bigint "author_id", null: false
-    t.string "group_type", null: false
+    t.integer "group_type", null: false
     t.string "group_value", null: false
-    t.string "rule_type", null: false
+    t.integer "rule_type", null: false
     t.string "rule_value", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
