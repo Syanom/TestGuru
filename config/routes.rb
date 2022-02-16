@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :badge_allotments, only: :index
   resources :gists, only: :create
   resources :feedbacks, only: %i[new create]
   resources :badges, only: :index
