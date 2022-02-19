@@ -15,7 +15,7 @@
   p
     = form.label :group_type
     br
-    = form.select 'group_type', Badge.group_types, {:include_blank => "Select"}
+    = form.select 'group_type', Badge.group_types.keys
   
   p
     = form.label :group_value
