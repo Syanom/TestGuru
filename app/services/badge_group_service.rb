@@ -10,6 +10,7 @@ class BadgeGroupService
     # Не понял, как мне тут поможет each_with_index
     # метод должен возвращать и коллекцию тестов и бейдж
     # массив с коллекциями тестов не подойдет
+    # Как отрефакторить по другому не смог придумать
     badges.each { |badge| result[badge] = tests(badge) }
     result
   end
