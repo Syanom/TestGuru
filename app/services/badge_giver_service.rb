@@ -22,6 +22,6 @@ class BadgeGiverService
 
     return if quantity.zero? || badge_allotment.number_of_badges > quantity
 
-    badge_allotment.upadate!(number_of_badges: quantity)
+    badge_allotment.update!(number_of_badges: quantity)
   end
 end
