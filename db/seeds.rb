@@ -1,8 +1,8 @@
 users = User.create!([
-                       { first_name: 'Vitaly', last_name: 'Kurennov', email: 'ViKur@somemail.com',
+                       { first_name: 'Yan', last_name: 'Dupliy', email: 'yandupliy@gmail.com',
                          confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
                          password: 'Qwer1234', type: 'Admin' },
-                       { first_name: 'Yan', last_name: 'Dupliy', email: 'yandupliy@gmail.com',
+                       { first_name: 'Vitaly', last_name: 'Kurennov', email: 'ViKur@somemail.com',
                          confirmed_at: '2021-12-1 22:00:00', updated_at: '2021-12-1 22:00:00',
                          password: 'Qwer1234', type: 'Admin' },
                        { first_name: 'Ivan', last_name: 'Ivanov', email: 'IvIv@somemail.com',
@@ -91,3 +91,22 @@ Answer.create!([
                  { body: 'Incorrect answer 3 for Alien question 3', correct: false, question: questions[11] },
                  { body: 'Correct answer 4 for Alien question 3', correct: true, question: questions[11] }
                ])
+
+Badge.create!([
+                { name: 'First try Ruby',
+                  image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
+                  author: users[0], group_type: 'SingleTest', group_value: tests[0].title,
+                  rule_type: 'Attempts', rule_value: '1' },
+                { name: 'Frontend in 3 attempts', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
+                  author: users[0], group_type: 'AllTestsWithCategory', group_value: categories[1].name,
+                  rule_type: 'Attempts', rule_value: '3' },
+                { name: 'Frontend in 30 seconds', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
+                  author: users[0], group_type: 'AllTestsWithCategory', group_value: categories[1].name,
+                  rule_type: 'CompletionTime', rule_value: '00:00:30' },
+                { name: 'Frontend completed', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
+                  author: users[0], group_type: 'AllTestsWithCategory', group_value: categories[1].name,
+                  rule_type: 'Completion', rule_value: 'true' },
+                { name: 'Alien programming in hour', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
+                  author: users[0], group_type: 'SingleTest', group_value: tests[3].title,
+                  rule_type: 'CompletionTime', rule_value: '01:00:00' }
+              ])

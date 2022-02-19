@@ -1,0 +1,41 @@
+.item.border.mx-2.my-3.p-2.d-flex.justify-content-between.align-items-center
+  div  
+    div
+      img src="#{badge.image_url}" width="auto" height="45"
+      strong = badge.name
+
+    .mx-2
+      - if badge.group_type == "AllTestsWithCategory"
+        div 
+          = t('admin.badges.badge.category')
+          = badge.group_value
+
+      - if badge.group_type == "SingleTest"
+        div 
+          = t('admin.badges.badge.test')
+          = badge.group_value
+    
+      - if badge.group_type == "AllTestsWithLevel"
+        = t('admin.badges.badge.level')
+        = badge.group_value
+
+      - if badge.rule_type == "Attempts"
+        div
+          = t('admin.badges.badge.attempts')
+          = badge.rule_value
+
+      - if badge.rule_type == "Completion"
+        div
+          = t('admin.badges.badge.completion')
+          = badge.rule_value
+
+      - if badge.rule_type == "CompletionTime"
+        div
+          = t('admin.badges.badge.completion_time')
+          = badge.rule_value
+  div
+    | x
+    - unless badge.badge_allotments.find_by(user: current_user).nil?
+      = badge.badge_allotments.find_by(user: current_user).number_of_badges
+    - else
+      | 0

@@ -24,6 +24,15 @@ en:
         level: "Level"
         category_id: "Category"
         timer: "Timer"
+      badge:
+        name: "Name"
+        image_url: "Image URL"
+        level: "Level"
+        category_id: "Category"
+        test_id: "Test"
+        attempts: "Number of Attempts"
+        completion: "Completion"
+        completion_time: "Completion Time"
       feedback:
         content: "Content"
       answer:
@@ -91,12 +100,17 @@ en:
     create:
       success: "Gist was successfully created"
       failure: "Gist creation failed"
+  
+  badge_allotments:
+    index:
+      header: "My badges"
 
   admin:
     tests:
       create:
         success: "Test was successfully created"
       index:
+        manage_badges: "Manage Badges"
         header: "Tests available"
         title: "Title"
         level: "Level"
@@ -157,6 +171,20 @@ en:
         question: "Question"
         url: "Gist hash"
         user: "User email"
+
+    badges:
+      index:
+        header: "Badges"
+      badge:
+        category: "Category: "
+        test: "Test: "
+        level: "Tests level: "
+        attempts: "Attempts number: "
+        completion: "Completion: "
+        completion_time: "Completion time: "
+      for_helper:
+        create_new_badge: "Create new Badge"
+        edit_badge: "Edit %{name} Badge"
 
   tests_mailer:
     completed_test:

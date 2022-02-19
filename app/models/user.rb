@@ -8,9 +8,12 @@ class User < ApplicationRecord
          :confirmable
 
   has_many :authored_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
+  has_many :authored_badges, class_name: 'Badge', foreign_key: 'author_id', dependent: :destroy
   has_many :authored_feedbacks, class_name: 'Feedback', foreign_key: 'author_id', dependent: :destroy
   has_many :test_completions, dependent: :destroy
   has_many :tests, through: :test_completions, source: :test
+  has_many :badge_allotments
+  has_many :badges, through: :badge_allotments
 
   def tests_by_level(level)
     completed_tests.level(level)

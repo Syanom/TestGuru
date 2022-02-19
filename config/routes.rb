@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :gists, only: :create
   resources :feedbacks, only: %i[new create]
+  resources :badges, only: :index
 
   resources :test_completions, only: %i[show update] do
     member do
@@ -33,5 +34,6 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges
   end
 end

@@ -1,0 +1,50 @@
+.mx-1
+  h1
+    img src="#{@badge.image_url}" width="auto" height="45"
+    = @badge.name
+
+  .mx-2
+    .mx-2
+      - if @badge.group_type == "AllTestsWithCategory"
+        div 
+          = t('.category')
+          | : 
+          = @badge.group_value
+
+      - if @badge.group_type == "SingleTest"
+        div 
+          = t('.test')
+          | : 
+          = @badge.group_value
+    
+      - if @badge.group_type == "AllTestsWithLevel"
+        div
+          = t('.level')
+          | : 
+          = @badge.group_value
+
+      - if @badge.rule_type == "Attempts"
+        div
+          = t('.attempts')
+          | : 
+          = @badge.rule_value
+
+      - if @badge.rule_type == "Completion"
+        div
+          = t('.completion')
+          | : 
+          = @badge.rule_value
+
+      - if @badge.rule_type == "CompletionTime"
+        div
+          = t('.completion_time')
+          | : 
+          = @badge.rule_value
+
+.mx-2
+  = link_to t('actions.edit'), edit_admin_badge_path
+  |  | 
+  = link_to t('actions.delete'), admin_badge_path,
+            method: :delete, data: { confirm: t('actions.sure?') }
+  br
+  = link_to t('actions.back'), admin_badges_path

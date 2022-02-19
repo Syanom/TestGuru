@@ -31,6 +31,15 @@ ru:
         level: "Уровень"
         category_id: "Категория"
         timer: "Таймер"
+      badge:
+        name: "Название"
+        image_url: "URL картинки"
+        level: "Уровень"
+        category_id: "Категория"
+        test_id: "Тест"
+        attempts: "Количество Попыток"
+        completion: "Выполнен"
+        completion_time: "Время Выполнения"
       feedback:
         content: "Содержание"
       answer:
@@ -95,11 +104,16 @@ ru:
       success: "Gist успешно сохранен"
       failure: "Не удалось сохранить gist"
 
+  badge_allotments:
+    index:
+      header: "Мои бейджи"
+
   admin:
     tests:
       create:
         success: "Тест создан"
       index:
+        manage_badges: "Редактировать Бейджи"
         header: "Доступные тесты"
         title: "Сортировать по названию"
         new_test: "Создать тест"
@@ -156,6 +170,20 @@ ru:
         question: "Вопрос"
         url: "Gist hash"
         user: "Email пользователя"
+
+    badges:
+      index:
+        header: "Бейджи"
+      badge:
+        category: "Категория: "
+        test: "Тест: "
+        level: "Уровень тестов: "
+        attempts: "Количество попыток: "
+        completion: "Завершен: "
+        completion_time: "Время выполнения: "
+      for_helper:
+        create_new_badge: "Создать новый Бейдж"
+        edit_badge: "Изменить %{name} Бейдж"
 
   tests_mailer:
     completed_test:

@@ -1,0 +1,6 @@
+.mx-2
+  h1 = t('admin.badges.index.header')
+
+.items
+  = render current_user.badges
+  = render @unearned_badges

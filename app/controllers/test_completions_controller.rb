@@ -11,6 +11,7 @@ class TestCompletionsController < ApplicationController
 
     if @test_completion.completed?
       TestsMailer.completed_test(@test_completion).deliver_now
+      BadgeGiverService.new.call(@test_completion) if completed?
       redirect_to result_test_completion_path(@test_completion)
     else
       render :show

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_07_200319) do
+ActiveRecord::Schema.define(version: 2022_01_23_074057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,29 @@ ActiveRecord::Schema.define(version: 2022_01_07_200319) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["body"], name: "index_answers_on_body"
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badge_allotments", force: :cascade do |t|
+    t.bigint "badge_id", null: false
+    t.bigint "user_id", null: false
+    t.integer "number_of_badges", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_badge_allotments_on_badge_id"
+    t.index ["user_id"], name: "index_badge_allotments_on_user_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "image_url", null: false
+    t.bigint "author_id", null: false
+    t.integer "group_type", null: false
+    t.string "group_value", null: false
+    t.integer "rule_type", null: false
+    t.string "rule_value", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_badges_on_author_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -112,6 +135,7 @@ ActiveRecord::Schema.define(version: 2022_01_07_200319) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badges", "users", column: "author_id"
   add_foreign_key "feedbacks", "users", column: "author_id"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users", column: "author_id"
