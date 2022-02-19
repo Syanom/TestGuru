@@ -15,9 +15,9 @@ class BadgeGroupService
 
   def tests(badge)
     case badge.group_type
-    when 'SingleTest' then Test.where(title: badge.group_value)
-    when 'AllTestsWithCategory' then Test.where(category: Category.find_by(name: badge.group_value))
-    when 'AllTestsWithLevel' then Test.where(level: badge.group_value)
+    when 'single_test' then Test.where(title: badge.group_value)
+    when 'all_tests_with_category' then Test.where(category: Category.find_by(name: badge.group_value))
+    when 'all_tests_with_level' then Test.where(level: badge.group_value)
     else raise 'Invalid badge group'
     end
   end

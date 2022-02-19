@@ -1,8 +1,8 @@
 class BadgeGiverService
   RULE_TYPES = {
-    'Attempts' => Rules::Attempts,
-    'Completion' => Rules::Completion,
-    'CompletionTime' => Rules::CompletionTime
+    'attempts' => Rules::Attempts,
+    'completion' => Rules::Completion,
+    'completion_time' => Rules::CompletionTime
   }.freeze
 
   def call(test_completion)
