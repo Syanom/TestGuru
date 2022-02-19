@@ -19,6 +19,5 @@ module TestGuru
     config.i18n.default_locale = :ru
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.autoload_paths += Dir[Rails.root.join('app', 'models', '**/')]
   end
 end

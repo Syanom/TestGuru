@@ -15,7 +15,7 @@
   p
     = form.label :group_type
     br
-    = form.select 'group_type', Badge::group_types, {:include_blank => "Select"}
+    = form.select 'group_type', Badge.group_types, {:include_blank => "Select"}
   
   p
     = form.label :group_value
@@ -25,7 +25,7 @@
   p
     = form.label :rule_type
     br
-    = form.select 'rule_type', Badge::rule_types, {:include_blank => "Select"}
+    = form.select 'rule_type', Badge.rule_types.keys
 
   p
     = form.label :rule_value
