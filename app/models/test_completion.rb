@@ -11,7 +11,6 @@ class TestCompletion < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if !completed? && correct_answer?(answer_ids)
     save!
-    BadgeGiverService.new.call(self) if completed?
   end
 
   def completed?
