@@ -7,6 +7,9 @@ class BadgeGroupService
     badges = Badge.select { |badge| tests(badge).include?(@test_completion.test) }
     result = {}
     # each with index
+    # Не понял, как мне тут поможет each_with_index
+    # метод должен возвращать и коллекцию тестов и бейдж
+    # массив с коллекциями тестов не подойдет
     badges.each { |badge| result[badge] = tests(badge) }
     result
   end
