@@ -95,18 +95,18 @@ Answer.create!([
 Badge.create!([
                 { name: 'First try Ruby',
                   image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], group_type: 'SingleTest', group_value: tests[0].title,
-                  rule_type: 'Attempts', rule_value: '1' },
+                  author: users[0], group_type: 'single_test', group_value: tests[0].title,
+                  rule_type: 'attempts', rule_value: '1' },
                 { name: 'Frontend in 3 attempts', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], group_type: 'AllTestsWithCategory', group_value: categories[1].name,
-                  rule_type: 'Attempts', rule_value: '3' },
+                  author: users[0], group_type: 'all_tests_with_category', group_value: categories[1].name,
+                  rule_type: 'attempts', rule_value: '3' },
                 { name: 'Frontend in 30 seconds', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], group_type: 'AllTestsWithCategory', group_value: categories[1].name,
-                  rule_type: 'CompletionTime', rule_value: '00:00:30' },
+                  author: users[0], group_type: 'all_tests_with_category', group_value: categories[1].name,
+                  rule_type: 'completion_time', rule_value: '00:00:30' },
                 { name: 'Frontend completed', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], group_type: 'AllTestsWithCategory', group_value: categories[1].name,
-                  rule_type: 'Completion', rule_value: 'true' },
+                  author: users[0], group_type: 'all_tests_with_category', group_value: categories[1].name,
+                  rule_type: 'completion', rule_value: 'true' },
                 { name: 'Alien programming in hour', image_url: 'https://i.pinimg.com/originals/ea/ca/4f/eaca4fcb632754945995f7927a8d4aec.png',
-                  author: users[0], group_type: 'SingleTest', group_value: tests[3].title,
-                  rule_type: 'CompletionTime', rule_value: '01:00:00' }
+                  author: users[0], group_type: 'single_test', group_value: tests[3].title,
+                  rule_type: 'completion_time', rule_value: '01:00:00' }
               ])
